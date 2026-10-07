@@ -5,9 +5,11 @@ import '../theme.dart';
 class LKTextField extends StatelessWidget {
   final String label;
   final TextEditingController? ctrl;
+  final bool readOnly;
   const LKTextField({
     required this.label,
     this.ctrl,
+    this.readOnly = false,
     super.key,
   });
 
@@ -40,6 +42,7 @@ class LKTextField extends StatelessWidget {
               label: label,
               child: TextField(
                 controller: ctrl,
+                readOnly: readOnly,
                 style: const TextStyle(
                   fontSize: 15,
                   color: LKColors.fgDark,

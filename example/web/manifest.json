@@ -1,11 +1,11 @@
 {
-    "name": "livekit_example",
-    "short_name": "livekit_example",
+    "name": "ThreadX Remote Assist",
+    "short_name": "Remote Assist",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "ThreadX Remote Assist: live video help for RealWear headsets.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

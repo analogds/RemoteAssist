@@ -103,3 +103,6 @@ testfiles/*.bin
 graphify-out/cache/
 graphify-out/20*/
 lib/graphify-out/
+
+# Pinned Flutter SDK (scripts/build-assist.sh, scripts/vercel-build.sh)
+.flutter-sdk/
