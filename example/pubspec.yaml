@@ -25,7 +25,11 @@ dependencies:
   livekit_client:
     path: ../
   flutter_dotenv: ^6.0.1
-  http: ^1.6.0
+  # ThreadX sign-in and the remoteAssistToken callable (web only).
+  firebase_core: ^4.2.0
+  firebase_auth: ^6.1.1
+  cloud_functions: ^6.0.3
+  url_launcher: ^6.2.6
 
 dependency_overrides:
   # Pin packages that use Apple APIs unavailable on CI runner's Xcode version.

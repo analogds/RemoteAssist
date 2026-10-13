@@ -6,15 +6,18 @@ import 'package:livekit_example/widgets/text_field.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:http/http.dart' as http;
 
 import 'dart:async';
-import 'dart:convert';
+import '../assist_token.dart';
 import '../exts.dart';
+import 'assist_gate.dart';
 
 class ConnectPage extends StatefulWidget {
-  //
+  /// On web, the room the token function joins (shown, not editable).
+  final String? room;
+
   const ConnectPage({
+    this.room,
     super.key,
   });
 
@@ -45,12 +48,12 @@ class _ConnectPageState extends State<ConnectPage> {
   bool _busy = false;
   bool _e2ee = false;
   bool _multiCodec = false;
-  bool _showAdvanced = false;
   String _preferredCodec = 'VP8';
 
   @override
   void initState() {
     super.initState();
+    _roomCtrl.text = widget.room ?? '';
     unawaited(_readPrefs());
     if (lkPlatformIs(PlatformType.android)) {
       unawaited(_checkPermissions());
@@ -97,12 +100,12 @@ class _ConnectPageState extends State<ConnectPage> {
         const bool.hasEnvironment('TOKEN') ? const String.fromEnvironment('TOKEN') : (dotenv.env['TOKEN'] ?? '');
     _sharedKeyCtrl.text =
         const bool.hasEnvironment('E2EEKEY') ? const String.fromEnvironment('E2EEKEY') : (dotenv.env['E2EEKEY'] ?? '');
-    _roomCtrl.text = prefs.getString(_storeKeyRoom) ?? '';
+    if (!kIsWeb) _roomCtrl.text = prefs.getString(_storeKeyRoom) ?? '';
     setState(() {
       _simulcast = prefs.getBool(_storeKeySimulcast) ?? true;
       _adaptiveStream = prefs.getBool(_storeKeyAdaptiveStream) ?? true;
       _dynacast = prefs.getBool(_storeKeyDynacast) ?? true;
-      _e2ee = prefs.getBool(_storeKeyE2EE) ?? false;
+      _e2ee = !kIsWeb && (prefs.getBool(_storeKeyE2EE) ?? false);
       _multiCodec = prefs.getBool(_storeKeyMultiCodec) ?? false;
       _preferredCodec = prefs.getString(_storeKeyPreferredCodec) ?? 'VP8';
     });
@@ -147,32 +150,19 @@ class _ConnectPageState extends State<ConnectPage> {
         ),
       );
 
-  // Fetch a fresh token from the deployed /api/token serverless function
-  // (Vercel). Only meaningful on web, where the app is served from the same
-  // origin as the API route. Returns whether the fetch succeeded.
+  // Fetch a fresh token from the ThreadX remoteAssistToken function as the signed-in user.
+  // Done on every Connect, since a token only lives 10 minutes. Returns whether it succeeded.
   Future<bool> _fetchToken(BuildContext ctx) async {
-    final room = _roomCtrl.text.trim();
-    if (room.isEmpty) {
-      ScaffoldMessenger.of(ctx).showSnackBar(
-        const SnackBar(content: Text('Enter a room name first')),
-      );
-      return false;
-    }
     setState(() {
       _busy = true;
     });
     try {
-      final endpoint = Uri.base.resolve('/api/token?room=${Uri.encodeQueryComponent(room)}');
-      final resp = await http.get(endpoint);
-      if (resp.statusCode != 200) {
-        throw Exception('Token server returned ${resp.statusCode}: ${resp.body}');
-      }
-      final data = jsonDecode(resp.body) as Map<String, dynamic>;
+      final grant = await fetchAssistGrant();
       setState(() {
-        _uriCtrl.text = data['url'] as String;
-        _tokenCtrl.text = data['token'] as String;
+        _uriCtrl.text = grant.url;
+        _tokenCtrl.text = grant.token;
+        _roomCtrl.text = grant.room;
       });
-      await _writePrefs();
       return true;
     } catch (error) {
       if (!ctx.mounted) return false;
@@ -229,23 +219,11 @@ class _ConnectPageState extends State<ConnectPage> {
     }
   }
 
-  // Web-only entry point for the Connect button: a room name fetches a
-  // fresh token (always wins, since it's the more recent explicit input);
-  // otherwise falls back to manually-entered advanced fields.
+  // Web-only entry point for the Connect button: the server picks the room and the token.
   Future<void> _connectOnWeb(BuildContext ctx) async {
-    final room = _roomCtrl.text.trim();
-    final hasManual = _uriCtrl.text.trim().isNotEmpty && _tokenCtrl.text.trim().isNotEmpty;
-    if (room.isNotEmpty) {
-      final ok = await _fetchToken(ctx);
-      if (!ok || !ctx.mounted) return;
-      await _connect(ctx);
-    } else if (hasManual) {
-      await _connect(ctx);
-    } else {
-      ScaffoldMessenger.of(ctx).showSnackBar(
-        const SnackBar(content: Text('Enter a room name, or fill in Server URL and Token manually')),
-      );
-    }
+    final ok = await _fetchToken(ctx);
+    if (!ok || !ctx.mounted) return;
+    await _connect(ctx);
   }
 
   void _setSimulcast(bool? value) async {
@@ -301,7 +279,7 @@ class _ConnectPageState extends State<ConnectPage> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 70),
                     child: Text(
-                      'Optic Live Stream',
+                      'ThreadX Remote Assist',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 32,
@@ -309,24 +287,17 @@ class _ConnectPageState extends State<ConnectPage> {
                       ),
                     ),
                   ),
-                  if (kIsWeb) ...[
+                  if (kIsWeb)
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.only(bottom: 25),
                       child: LKTextField(
-                        label: 'Room name',
+                        label: 'Room',
                         ctrl: _roomCtrl,
+                        readOnly: true,
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: TextButton.icon(
-                        onPressed: () => setState(() => _showAdvanced = !_showAdvanced),
-                        icon: Icon(_showAdvanced ? Icons.expand_less : Icons.expand_more),
-                        label: Text(_showAdvanced ? 'Hide advanced' : 'Advanced (custom server)'),
-                      ),
-                    ),
-                  ],
-                  if (!kIsWeb || _showAdvanced) ...[
+                    )
+                  else ...[
+                    // Dev runs off the web have no ThreadX sign-in, so they take a server and token by hand.
                     Padding(
                       padding: const EdgeInsets.only(bottom: 25),
                       child: LKTextField(
@@ -348,8 +319,9 @@ class _ConnectPageState extends State<ConnectPage> {
                         ctrl: _sharedKeyCtrl,
                       ),
                     ),
+                    // E2EE needs the shared key above, so it is a dev-run option only.
+                    _switchRow('E2EE', _e2ee, _setE2EE),
                   ],
-                  _switchRow('E2EE', _e2ee, _setE2EE),
                   _switchRow('Simulcast', _simulcast, _setSimulcast),
                   _switchRow('Adaptive Stream', _adaptiveStream, _setAdaptiveStream),
                   _switchRow('Dynacast', _dynacast, _setDynacast),
@@ -408,6 +380,11 @@ class _ConnectPageState extends State<ConnectPage> {
                       ],
                     ),
                   ),
+                  if (kIsWeb)
+                    const TextButton(
+                      onPressed: openThreadX,
+                      child: Text('Back to ThreadX'),
+                    ),
                 ],
               ),
             ),
