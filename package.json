@@ -1,0 +1,8 @@
+{
+  "name": "livekit-flutter-example-token-server",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "livekit-server-sdk": "^2.16.0"
+  }
+}
