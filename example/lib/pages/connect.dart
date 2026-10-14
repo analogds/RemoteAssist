@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:livekit_client/livekit_client.dart';
 import 'package:livekit_example/pages/prejoin.dart';
+import 'package:livekit_example/theme.dart';
 import 'package:livekit_example/widgets/text_field.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -267,23 +268,28 @@ class _ConnectPageState extends State<ConnectPage> {
           alignment: Alignment.center,
           child: SingleChildScrollView(
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 20,
+              // A white card on the grey page, like the LMS dashboard cards.
+              margin: const EdgeInsets.all(20),
+              padding: const EdgeInsets.fromLTRB(28, 32, 28, 20),
+              constraints: const BoxConstraints(maxWidth: 440),
+              decoration: BoxDecoration(
+                color: ThreadXColors.card,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: const [BoxShadow(color: Color(0x1A2B495E), blurRadius: 12, offset: Offset(0, 4))],
               ),
-              constraints: const BoxConstraints(maxWidth: 400),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 70),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
                     child: Text(
                       'ThreadX Remote Assist',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
+                        color: ThreadXColors.crimson,
                       ),
                     ),
                   ),
@@ -335,13 +341,13 @@ class _ConnectPageState extends State<ConnectPage> {
                             value: _preferredCodec,
                             icon: const Icon(
                               Icons.arrow_drop_down,
-                              color: Colors.blue,
+                              color: ThreadXColors.crimson,
                             ),
                             elevation: 16,
-                            style: const TextStyle(color: Colors.blue),
+                            style: const TextStyle(color: ThreadXColors.crimson),
                             underline: Container(
                               height: 2,
-                              color: Colors.blueAccent,
+                              color: ThreadXColors.crimson,
                             ),
                             onChanged: (String? value) {
                               if (value == null) return;

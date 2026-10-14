@@ -26,7 +26,7 @@ class LKTextField extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: LKColors.fgDark,
+                  color: ThreadXColors.text,
                 ),
               ),
             ),
@@ -34,8 +34,8 @@ class LKTextField extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
-              color: LKColors.inputFillDark,
-              border: Border.all(width: 1, color: LKColors.inputDark),
+              color: readOnly ? ThreadXColors.surface : ThreadXColors.card,
+              border: Border.all(width: 1, color: ThreadXColors.border),
               borderRadius: BorderRadius.circular(6),
             ),
             child: Semantics(
@@ -45,9 +45,9 @@ class LKTextField extends StatelessWidget {
                 readOnly: readOnly,
                 style: const TextStyle(
                   fontSize: 15,
-                  color: LKColors.fgDark,
+                  color: ThreadXColors.text,
                 ),
-                cursorColor: LKColors.fgDark,
+                cursorColor: ThreadXColors.crimson,
                 decoration: const InputDecoration.collapsed(hintText: ''),
                 keyboardType: TextInputType.url,
                 autocorrect: false,

@@ -47,7 +47,7 @@ class LiveKitExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'ThreadX Remote Assist',
-        theme: LiveKitTheme().buildThemeData(context),
+        theme: ThreadXTheme.light(context),
         debugShowCheckedModeBanner: false,
         home: kIsWeb ? const AssistGate() : const ConnectPage(),
       );

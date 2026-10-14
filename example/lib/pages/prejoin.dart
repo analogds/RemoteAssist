@@ -268,7 +268,13 @@ class _PreJoinPageState extends State<PreJoinPage> {
       if (!context.mounted) return;
       await Navigator.push<void>(
         context,
-        MaterialPageRoute(builder: (_) => RoomPage(room, listener, fastConnection: true)),
+        // The call is dark behind the video (white controls); the screens before it use the LMS light theme.
+        MaterialPageRoute(
+          builder: (ctx) => Theme(
+            data: ThreadXTheme.call(ctx),
+            child: RoomPage(room, listener, fastConnection: true),
+          ),
+        ),
       );
     } catch (error) {
       print('Could not connect $error');
