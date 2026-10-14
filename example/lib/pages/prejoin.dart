@@ -59,6 +59,7 @@ class _PreJoinPageState extends State<PreJoinPage> {
 
   MediaDevice? _selectedVideoDevice;
   MediaDevice? _selectedAudioDevice;
+  bool _relistedAfterPermission = false;
   VideoParameters _selectedVideoParameters = VideoParametersPresets.h720_169;
 
   @override
@@ -169,6 +170,7 @@ class _PreJoinPageState extends State<PreJoinPage> {
         ),
       );
       await _audioTrack!.start();
+      await _relistDevicesIfHidden();
     }
   }
 
@@ -185,8 +187,29 @@ class _PreJoinPageState extends State<PreJoinPage> {
         params: _selectedVideoParameters,
       ));
       await _videoTrack!.start();
+      await _relistDevicesIfHidden();
     }
   }
+
+  // Browsers hide device names (and real ids) until the page has camera/mic permission, so the
+  // first list, taken before the preview tracks asked for it, has blank entries. List once more
+  // after a track has started; onDeviceChange does not fire for a permission grant.
+  Future<void> _relistDevicesIfHidden() async {
+    if (_relistedAfterPermission || !mounted) return;
+    if (![..._videoInputs, ..._audioInputs].any((d) => d.label.isEmpty)) return;
+    _relistedAfterPermission = true;
+    final devices = await Hardware.instance.enumerateDevices();
+    // The preview tracks were opened before the ids were known (id ''), so on the browser's
+    // default device, which it lists first. Point the selection there instead of restarting them.
+    MediaDevice? firstOf(String kind) => devices.where((d) => d.kind == kind).firstOrNull;
+    if (_selectedVideoDevice?.deviceId.isEmpty ?? false) _selectedVideoDevice = firstOf('videoinput');
+    if (_selectedAudioDevice?.deviceId.isEmpty ?? false) _selectedAudioDevice = firstOf('audioinput');
+    await _loadDevices(devices);
+  }
+
+  // Fallback when the browser still gives no name (permission refused).
+  static String _deviceName(MediaDevice d, List<MediaDevice> all, String kind) =>
+      d.label.isNotEmpty ? d.label : '$kind ${all.indexOf(d) + 1}';
 
   @override
   void dispose() {
@@ -268,7 +291,13 @@ class _PreJoinPageState extends State<PreJoinPage> {
       if (!context.mounted) return;
       await Navigator.push<void>(
         context,
-        MaterialPageRoute(builder: (_) => RoomPage(room, listener, fastConnection: true)),
+        // The call is dark behind the video (white controls); the screens before it use the LMS light theme.
+        MaterialPageRoute(
+          builder: (ctx) => Theme(
+            data: ThreadXTheme.call(ctx),
+            child: RoomPage(room, listener, fastConnection: true),
+          ),
+        ),
       );
     } catch (error) {
       print('Could not connect $error');
@@ -379,7 +408,7 @@ class _PreJoinPageState extends State<PreJoinPage> {
                               .map((MediaDevice item) => DropdownMenuItem<MediaDevice>(
                                     value: item,
                                     child: Text(
-                                      item.label,
+                                      _deviceName(item, _videoInputs, 'Camera'),
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
@@ -477,7 +506,7 @@ class _PreJoinPageState extends State<PreJoinPage> {
                               .map((MediaDevice item) => DropdownMenuItem<MediaDevice>(
                                     value: item,
                                     child: Text(
-                                      item.label,
+                                      _deviceName(item, _audioInputs, 'Microphone'),
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),

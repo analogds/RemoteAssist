@@ -14,7 +14,7 @@ extension LKColors on Colors {
 
   // Legacy aliases. Existing widgets reference these; values were refreshed to
   // match the new dark-mode palette so the rest of the UI keeps building.
-  static const lkBlue = lkAccentDark; // was Color(0xFF5A8BFF)
+  static const lkBlue = Color(0xFFB8403F); // ThreadX crimson (was lkAccentDark, then 0xFF5A8BFF)
   static const lkDarkBlue = neutral900; // was Color(0xFF00153C)
 
   // ===== Semantic theme tokens — dark mode =====
@@ -222,105 +222,136 @@ extension LKColors on Colors {
   static const rose950 = Color(0xFF4C0519);
 }
 
-class LiveKitTheme {
-  //
-  final bgColor = LKColors.bgDark;
-  final textColor = LKColors.fgDark;
-  final cardColor = LKColors.cardDark;
-  final accentColor = LKColors.lkAccentDark;
-  final mutedColor = LKColors.mutedFgDark;
-  final borderColor = LKColors.borderDark;
-  final destructiveColor = LKColors.destructiveDark;
+/// ThreadX LMS palette, copied from LMS/threadx-web lib/styles/app.colors.dart so
+/// /assist looks like the site it is served from.
+class ThreadXColors {
+  ThreadXColors._();
 
-  ThemeData buildThemeData(BuildContext ctx) => ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: cardColor,
+  static const crimson = Color(0xFFB8403F); // LMS primary
+  static const burgundy = Color(0xFF853732); // LMS primaryVariant / error
+  static const dustyBlue = Color(0xFF88AAC4); // LMS secondary
+  static const navy = Color(0xFF2B495E);
+  static const surface = Color(0xFFF5F5F5);
+  static const background = Color(0xFFEEEEEE);
+  static const card = Color(0xFFFFFFFF);
+  static const text = Color(0xFF000000);
+  static const mutedText = Color(0xFF4A5568); // LMS onSurfaceVariant
+  static const border = Color(0xFFD4D4D4);
+}
+
+/// Two themes: [light] for the screens before the call (sign-in notices,
+/// connect, device selection), matching the LMS; [call] for the room, which
+/// stays dark behind the video so the white call controls stay readable.
+class ThreadXTheme {
+  ThreadXTheme._();
+
+  static ButtonStyle _buttonStyle(Color accent, Color onAccent) => ButtonStyle(
+        textStyle: WidgetStateProperty.all<TextStyle>(GoogleFonts.roboto(
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+        )),
+        padding: WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 20, horizontal: 25)),
+        shape: WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+        foregroundColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.disabled) ? onAccent.withValues(alpha: 0.6) : onAccent),
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) return accent.withValues(alpha: 0.5);
+          if (states.contains(WidgetState.pressed) ||
+              states.contains(WidgetState.hovered) ||
+              states.contains(WidgetState.focused)) {
+            return ThreadXColors.burgundy;
+          }
+          return accent;
+        }),
+        overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
+        animationDuration: const Duration(milliseconds: 150),
+      );
+
+  static SwitchThemeData _switchTheme(Color offTrack, Color offThumb) => SwitchThemeData(
+        trackColor: WidgetStateProperty.resolveWith(
+            (states) => states.contains(WidgetState.selected) ? ThreadXColors.crimson : offTrack),
+        thumbColor: WidgetStateProperty.resolveWith(
+            (states) => states.contains(WidgetState.selected) ? Colors.white : offThumb),
+        trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+      );
+
+  static ThemeData light(BuildContext ctx) => ThemeData(
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: ThreadXColors.background,
+        canvasColor: ThreadXColors.card,
+        cardColor: ThreadXColors.card,
+        primaryColor: ThreadXColors.crimson,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: ThreadXColors.crimson,
+          foregroundColor: Colors.white,
         ),
-        cardColor: cardColor,
-        scaffoldBackgroundColor: bgColor,
-        canvasColor: bgColor,
-        iconTheme: IconThemeData(
-          color: textColor,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-            textStyle: WidgetStateProperty.all<TextStyle>(GoogleFonts.montserrat(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-            )),
-            padding: WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 20, horizontal: 25)),
-            shape:
-                WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
-            foregroundColor: WidgetStateProperty.resolveWith((states) {
-              if (states.contains(WidgetState.disabled)) {
-                return LKColors.primaryFgDark.withValues(alpha: 0.5);
-              }
-              return LKColors.primaryFgDark;
-            }),
-            backgroundColor: WidgetStateProperty.resolveWith((states) {
-              if (states.contains(WidgetState.disabled)) {
-                return accentColor.withValues(alpha: 0.5);
-              }
-              if (states.contains(WidgetState.pressed) ||
-                  states.contains(WidgetState.hovered) ||
-                  states.contains(WidgetState.focused)) {
-                return accentColor.withValues(alpha: 0.9);
-              }
-              return accentColor;
-            }),
-            overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
-            animationDuration: const Duration(milliseconds: 150),
-          ),
+        iconTheme: const IconThemeData(color: ThreadXColors.text),
+        elevatedButtonTheme: ElevatedButtonThemeData(style: _buttonStyle(ThreadXColors.crimson, Colors.white)),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: ThreadXColors.crimson),
         ),
         checkboxTheme: CheckboxThemeData(
-          checkColor: WidgetStateProperty.all(LKColors.primaryFgDark),
-          fillColor: WidgetStateProperty.all(accentColor),
+          checkColor: WidgetStateProperty.all(Colors.white),
+          fillColor: WidgetStateProperty.all(ThreadXColors.crimson),
         ),
-        switchTheme: SwitchThemeData(
-          trackColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.selected)) {
-              return accentColor;
-            }
-            return accentColor.withValues(alpha: 0.3);
-          }),
-          thumbColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.selected)) {
-              return LKColors.fgDark;
-            }
-            return LKColors.fgDark.withValues(alpha: 0.3);
-          }),
-        ),
+        switchTheme: _switchTheme(ThreadXColors.border, Colors.white),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: ThreadXColors.crimson),
         dialogTheme: DialogThemeData(
-          backgroundColor: cardColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
+          backgroundColor: ThreadXColors.card,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
-        textTheme: GoogleFonts.montserratTextTheme(
-          Theme.of(ctx).textTheme,
-        ).apply(
-          displayColor: textColor,
-          bodyColor: textColor,
-          decorationColor: textColor,
+        textTheme: GoogleFonts.robotoTextTheme(Theme.of(ctx).textTheme).apply(
+          displayColor: ThreadXColors.text,
+          bodyColor: ThreadXColors.text,
+          decorationColor: ThreadXColors.text,
         ),
-        hintColor: destructiveColor,
-        inputDecorationTheme: InputDecorationTheme(
-          labelStyle: const TextStyle(
-            color: LKColors.lkAccentDark,
-          ),
-          hintStyle: TextStyle(
-            color: LKColors.lkAccentDark.withValues(alpha: 5),
-          ),
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
+        colorScheme: const ColorScheme.light(
+          primary: ThreadXColors.crimson,
+          onPrimary: Colors.white,
+          secondary: ThreadXColors.dustyBlue,
+          onSecondary: Colors.white,
+          surface: ThreadXColors.card,
+          onSurface: ThreadXColors.text,
+          onSurfaceVariant: ThreadXColors.mutedText,
+          outline: ThreadXColors.border,
+          error: ThreadXColors.burgundy,
         ),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: accentColor,
-          brightness: Brightness.dark,
-          surface: bgColor,
-          primary: accentColor,
+      );
+
+  static ThemeData call(BuildContext ctx) => ThemeData(
+        brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(backgroundColor: LKColors.cardDark),
+        cardColor: LKColors.cardDark,
+        scaffoldBackgroundColor: LKColors.bgDark,
+        canvasColor: LKColors.bgDark,
+        primaryColor: ThreadXColors.crimson,
+        iconTheme: const IconThemeData(color: LKColors.fgDark),
+        elevatedButtonTheme: ElevatedButtonThemeData(style: _buttonStyle(ThreadXColors.crimson, Colors.white)),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: LKColors.fgDark),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: WidgetStateProperty.all(Colors.white),
+          fillColor: WidgetStateProperty.all(ThreadXColors.crimson),
+        ),
+        switchTheme: _switchTheme(LKColors.neutral700, LKColors.neutral400),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: ThreadXColors.crimson),
+        dialogTheme: DialogThemeData(
+          backgroundColor: LKColors.cardDark,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        textTheme: GoogleFonts.robotoTextTheme(ThemeData(brightness: Brightness.dark).textTheme).apply(
+          displayColor: LKColors.fgDark,
+          bodyColor: LKColors.fgDark,
+          decorationColor: LKColors.fgDark,
+        ),
+        colorScheme: const ColorScheme.dark(
+          primary: ThreadXColors.crimson,
+          onPrimary: Colors.white,
           secondary: LKColors.secondaryDark,
-          error: destructiveColor,
+          surface: LKColors.bgDark,
+          onSurface: LKColors.fgDark,
+          error: LKColors.destructiveDark,
         ),
       );
 }
