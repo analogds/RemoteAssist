@@ -49,6 +49,12 @@ class LiveKitExampleApp extends StatelessWidget {
         title: 'ThreadX Remote Assist',
         theme: ThreadXTheme.light(context),
         debugShowCheckedModeBanner: false,
-        home: kIsWeb ? const AssistGate() : const ConnectPage(),
+        home: kIsWeb
+            ? (_devRoom.isNotEmpty ? const ConnectPage(room: _devRoom) : const AssistGate())
+            : const ConnectPage(),
       );
 }
+
+/// Local UI work only: `flutter run -d chrome --dart-define=ASSIST_DEV_ROOM=msc-support` skips the
+/// sign-in gate, which can never pass on localhost. Always empty in release builds.
+const _devRoom = kReleaseMode ? '' : String.fromEnvironment('ASSIST_DEV_ROOM');

@@ -293,16 +293,7 @@ class _ConnectPageState extends State<ConnectPage> {
                       ),
                     ),
                   ),
-                  if (kIsWeb)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 25),
-                      child: LKTextField(
-                        label: 'Room',
-                        ctrl: _roomCtrl,
-                        readOnly: true,
-                      ),
-                    )
-                  else ...[
+                  if (!kIsWeb) ...[
                     // Dev runs off the web have no ThreadX sign-in, so they take a server and token by hand.
                     Padding(
                       padding: const EdgeInsets.only(bottom: 25),
@@ -328,43 +319,68 @@ class _ConnectPageState extends State<ConnectPage> {
                     // E2EE needs the shared key above, so it is a dev-run option only.
                     _switchRow('E2EE', _e2ee, _setE2EE),
                   ],
-                  _switchRow('Simulcast', _simulcast, _setSimulcast),
-                  _switchRow('Adaptive Stream', _adaptiveStream, _setAdaptiveStream),
-                  _switchRow('Dynacast', _dynacast, _setDynacast),
-                  _switchRow('Multi Codec', _multiCodec, _setMultiCodec, bottom: _multiCodec ? 5 : 25),
-                  if (_multiCodec)
-                    Padding(
-                        padding: const EdgeInsets.only(bottom: 5),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                          const Flexible(child: Text('Preferred Codec:')),
-                          DropdownButton<String>(
-                            value: _preferredCodec,
-                            icon: const Icon(
-                              Icons.arrow_drop_down,
-                              color: ThreadXColors.crimson,
+                  // Room and the stream options are rarely touched, so they sit behind a collapsed Settings row.
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: ExpansionTile(
+                      title: const Text('Settings'),
+                      leading: const Icon(Icons.settings_outlined),
+                      tilePadding: EdgeInsets.zero,
+                      childrenPadding: const EdgeInsets.only(top: 5),
+                      shape: const Border(),
+                      collapsedShape: const Border(),
+                      iconColor: ThreadXColors.crimson,
+                      textColor: ThreadXColors.crimson,
+                      children: [
+                        if (kIsWeb)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 25),
+                            child: LKTextField(
+                              label: 'Room',
+                              ctrl: _roomCtrl,
+                              readOnly: true,
                             ),
-                            elevation: 16,
-                            style: const TextStyle(color: ThreadXColors.crimson),
-                            underline: Container(
-                              height: 2,
-                              color: ThreadXColors.crimson,
-                            ),
-                            onChanged: (String? value) {
-                              if (value == null) return;
-                              setState(() {
-                                _preferredCodec = value;
-                              });
-                              unawaited(_writePrefs());
-                            },
-                            items: ['Preferred Codec', 'AV1', 'VP9', 'VP8', 'H264', 'H265']
-                                .map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                          )
-                        ])),
+                          ),
+                        _switchRow('Simulcast', _simulcast, _setSimulcast),
+                        _switchRow('Adaptive Stream', _adaptiveStream, _setAdaptiveStream),
+                        _switchRow('Dynacast', _dynacast, _setDynacast),
+                        _switchRow('Multi Codec', _multiCodec, _setMultiCodec),
+                        if (_multiCodec)
+                          Padding(
+                              padding: const EdgeInsets.only(bottom: 5),
+                              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                                const Flexible(child: Text('Preferred Codec:')),
+                                DropdownButton<String>(
+                                  value: _preferredCodec,
+                                  icon: const Icon(
+                                    Icons.arrow_drop_down,
+                                    color: ThreadXColors.crimson,
+                                  ),
+                                  elevation: 16,
+                                  style: const TextStyle(color: ThreadXColors.crimson),
+                                  underline: Container(
+                                    height: 2,
+                                    color: ThreadXColors.crimson,
+                                  ),
+                                  onChanged: (String? value) {
+                                    if (value == null) return;
+                                    setState(() {
+                                      _preferredCodec = value;
+                                    });
+                                    unawaited(_writePrefs());
+                                  },
+                                  items: ['Preferred Codec', 'AV1', 'VP9', 'VP8', 'H264', 'H265']
+                                      .map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                )
+                              ])),
+                      ],
+                    ),
+                  ),
                   ElevatedButton(
                     onPressed: _busy ? null : () => kIsWeb ? _connectOnWeb(context) : _connect(context),
                     child: Row(
@@ -389,7 +405,7 @@ class _ConnectPageState extends State<ConnectPage> {
                   if (kIsWeb)
                     const TextButton(
                       onPressed: openThreadX,
-                      child: Text('Back to ThreadX'),
+                      child: Text('Back to Dashboard'),
                     ),
                 ],
               ),

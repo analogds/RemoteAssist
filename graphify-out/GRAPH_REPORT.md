@@ -1,158 +1,112 @@
-# Graph Report - StreamFlutter  (2026-09-22)
+# Graph Report - RemoteAssist  (2026-10-22)
 
 ## Corpus Check
-- 296 files · ~251,609 words
+- 305 files · ~280,131 words
 - Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 84 file(s) not represented in the graph (top: (none) 33, .xml 8, .plist 8)
 
 ## Summary
-- 10615 nodes · 16637 edges · 309 communities (277 shown, 22 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 130 edges (avg confidence: 0.85)
+- 7361 nodes · 11125 edges · 241 communities (193 shown, 48 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `207d1eb1`
+- Built from commit: `0823a780`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- src/proto/livekit_models.pb.dart
-- src/proto/livekit_rtc.pb.dart
-- livekit_models.pbenum.dart
-- src/core/engine.dart
-- src/core/room.dart
-- src/internal/events.dart
-- lib/livekit_client.dart
-- src/agent/session.dart
-- src/options.dart
-- src/proto/livekit_metrics.pb.dart
-- src/participant/participant.dart
-- src/utils.dart
-- @internal
-- src/stats/stats.dart
-- src/core/signal_client.dart
-- src/managers/event.dart
-- src/track/options.dart
-- src/types/data_stream.dart
-- other.dart
-- src/participant/local.dart
-- ../events.dart
-- src/audio/audio_manager.dart
-- src/token_source/jwt.dart
-- src/publication/remote.dart
-- src/types/video_parameters.dart
-- src/events.dart
-- src/widgets/video_track_renderer.dart
-- src/types/rpc.dart
-- lib/src/track/local/local.dart
-- lib/src/preconnect/pre_connect_audio_buffer.dart
-- src/e2ee/key_provider.dart
-- _
-- InternalEvent
-- lib/src/agent/agent.dart
-- src/types/video_dimensions.dart
-- src/track/local/video.dart
-- package:flutter_webrtc/flutter_webrtc.dart
-- src/core/transport.dart
-- src/agent/chat/transcription_stream_receiver.dart
-- src/track/track.dart
-- src/e2ee/e2ee_manager.dart
-- src/utils/data_packet_buffer.dart
-- src/token_source/caching.dart
-- livekit_metrics.pbenum.dart
-- audio_session.dart
-- lib/src/proto/livekit_models.pb.dart
-- src/hardware/hardware.dart
-- src/publication/track_publication.dart
-- ../support/platform.dart
-- src/widgets/screen_select_dialog.dart
-- src/audio/audio_processing_state.dart
-- src/token_source/room_configuration.dart
-- src/track/audio_visualizer_web.dart
-- src/participant/remote.dart
-- lib/src/json/agent_attributes.dart
-- ../core/room.dart
-- ../extensions.dart
-- src/support/region_url_provider.dart
-- src/support/platform.dart
-- src/core/pending_track_queue.dart
-- src/rpc/rpc_client_manager.dart
-- src/track/web/_audio_analyser.dart
-- lib/src/data_stream/stream_writer.dart
-- src/audio/audio_frame_capture_web.dart
-- Timer?
-- src/track/web/_audio_html.dart
-- lib/src/proto/livekit_rtc.pb.dart
-- src/extensions.dart
-- @immutable
-- exceptions.dart
-- src/types/audio_encoding.dart
-- src/utils/ttl_map.dart
-- src/audio/audio_frame_capture.dart
-- lib/src/support/native_audio.dart
-- theme.dart
-- Map
-- src/types/video_encoding.dart
-- lib/src/audio/audio_frame_capture_native.dart
-- ../../proto/livekit_rtc.pb.dart
-- src/data_stream/stream_reader.dart
-- src/agent/chat/message.dart
-- e2ee.worker.dart.js
-- lib/src/support/platform/web.dart
-- src/support/disposable.dart
-- lib/src/support/websocket.dart
-- return
-- typedef
-- ../support/disposable.dart
-- lib/src/managers/broadcast_manager.dart
-- bool get
-- Exception
-- dart:async
-- src/token_source/endpoint.dart
+- _eval$1
+- call$1
+- log$4
+- SignalClient
 - String
-- Duration
-- lib/src/extensions.dart
+- .call$1
+- livekit_client.dart
+- e2ee.worker.dart
+- $indexSet
+- LKRemoteAudioTrack
+- _removeListeners$0
+- caching_token_source_test.dart
+- audio_visualizer.cpp
+- RTCAudioRenderer
+- assist_token.dart
+- package.json
+- LKLocalAudioTrack
+- _shrOtherPositive$1
+- copyProperties
+- video_track_view_registration.dart
+- local/audio.dart
+- convert$1
+- installInstanceTearOff
+- asUint8List$0
+- getTag
+- get$stackTrace
+- _TokenSourceConfiguration
+- VideoDimensions
+- local/local.dart
+- pre_connect_audio_buffer.dart
+- TokenSourceFixed
 - _
-- lib/src/internal/events.dart
+- VideoParameters
+- agent.dart
+- TestKeyProvider
+- build-assist.sh
+- package:flutter_webrtc/flutter_webrtc.dart
+- livekit_models.pb.dart
+- static const
+- agent_attributes.dart
+- websocket/web.dart
+- _audio_analyser.dart
+- stream_writer.dart
+- audio_frame_capture_web.dart
+- dart:async
+- livekit_rtc.pb.dart
+- native_audio.dart
+- theme.dart
+- audio_frame_capture_native.dart
+- e2ee.worker.dart.js
+- platform/web.dart
+- websocket.dart
+- return
+- String
+- broadcast_manager.dart
+- src/constants.dart
+- extensions.dart
+- _
+- internal/events.dart
 - dart:typed_data
-- dart:io
+- platform/io.dart
 - CHANGELOG
-- ../proto/livekit_models.pb.dart
-- lib/src/audio/audio_session_policy.dart
-- DateTime
-- options.dart
+- participant_permissions.dart
+- audio_session_policy.dart
+- @immutable
+- package:collection/collection.dart
 - AudioTrack
 - List
-- src/e2ee/events.dart
-- package:flutter/material.dart
-- lib/src/core/engine.dart
-- package:web/web.dart
-- lib/src/core/room.dart
-- AudioReceiverStats
-- src/agent/constants.dart
+- StatelessWidget
+- engine.dart
+- audio_session_test.dart
+- core/room.dart
 - e2ee.nalu_utils.dart
-- State
-- lib/src/options.dart
-- src/track/web/_audio_context.dart
-- lib/src/agent/session.dart
-- @visibleForTesting
-- Iterable
+- src/options.dart
+- session.dart
 - create_version.dart
 - rpc_test_sheet.dart
-- lib/src/proto/livekit_metrics.pb.dart
-- Object
+- livekit_metrics.pb.dart
+- assist_gate.dart
 - Bool
-- lib/src/track/options.dart
+- track/options.dart
 - peerconnection_mock.dart
-- lib/src/utils.dart
-- lib/src/publication/track_publication.dart
-- VideoQuality?
+- src/utils.dart
+- track_publication.dart
 - widgets/participant.dart
-- lib/src/stats/stats.dart
-- lib/src/participant/participant.dart
-- lib/src/core/signal_client.dart
+- stats.dart
+- participant/participant.dart
+- @internal
 - remote_track_publication_test.dart
-- lib/src/types/data_stream.dart
-- lib/src/track/audio_visualizer_web.dart
+- data_stream.dart
+- audio_visualizer_web.dart
 - e2ee.keyhandler.dart
 - lib/src/events.dart
 - connect.dart
@@ -160,84 +114,73 @@
 - _
 - e2ee.data_packet_cryptor.dart
 - prejoin.dart
-- lib/src/agent/chat/transcription_stream_receiver.dart
-- lib/src/participant/local.dart
-- lib/src/types/video_parameters.dart
-- NSObject
+- transcription_stream_receiver.dart
+- participant/local.dart
+- video_parameters.dart
+- AudioRenderer
 - e2ee.frame_cryptor.dart
-- lib/src/publication/remote.dart
+- publication/remote.dart
 - lib/src/types/rpc.dart
-- lib/src/audio/audio_manager.dart
+- audio_manager.dart
 - controls.dart
 - Float
 - math_extras.h
 - LiveKitPlugin
 - Foundation
-- lib/src/token_source/jwt.dart
-- lib/src/widgets/video_track_renderer.dart
+- jwt.dart
+- video_track_renderer.dart
 - room_e2e_test.dart
-- lib/src/types/video_dimensions.dart
+- video_dimensions.dart
 - token_source.dart
-- caching_token_source_test.dart
-- String
-- lib/src/e2ee/e2ee_manager.dart
-- $1
-- h
-- lib/src/core/transport.dart
-- lib/src/track/track.dart
+- token_source_test.dart
+- FlutterResult
+- e2ee_manager.dart
+- transport.dart
+- track.dart
 - check_version.dart
 - pages/room.dart
 - RoomEvent
-- lib/src/track/local/video.dart
-- FlutterResult
-- lib/src/e2ee/key_provider.dart
-- lib/src/participant/remote.dart
+- local/video.dart
+- Any
+- key_provider.dart
+- participant/remote.dart
 - e2ee_fake_manager.dart
 - create_change.dart
 - AudioVisualizer
-- data_stream_reliability_test.dart
-- lib/src/hardware/hardware.dart
-- lib/src/utils/data_packet_buffer.dart
-- lib/src/widgets/screen_select_dialog.dart
+- Room
+- hardware.dart
+- data_packet_buffer.dart
+- screen_select_dialog.dart
 - Usage
 - _
-- Any
 - sound_waveform.dart
-- .$1
 - _
 - DarwinNotification
-- lib/src/token_source/caching.dart
-- lib/src/support/region_url_provider.dart
-- String? get
+- caching.dart
+- region_url_provider.dart
 - e2e_container.dart
-- lib/src/core/participant_collection.dart
+- participant_collection.dart
 - SocketConnection
-- K
-- LKAudioSwitchManager
-- package:flutter_test/flutter_test.dart
-- c
+- LKAudioSwitchManager.kt
 - signal_client_test.dart
 - AVAudioFormat
-- lib/src/support/disposable.dart
-- lib/src/audio/audio_processing_state.dart
-- lib/src/core/pending_track_queue.dart
+- InternalEvent
+- audio_processing_state.dart
 - _
-- lib/src/rpc/rpc_client_manager.dart
+- rpc_client_manager.dart
 - lib/src/support/platform.dart
-- v4sf
+- pffft.c
 - FFTProcessor
-- lib/src/audio/audio_frame_capture.dart
-- package:logging/logging.dart
-- lib/src/managers/event.dart
-- Accelerate
+- audio_frame_capture.dart
+- e2ee.logger.dart
+- package:meta/meta.dart
+- AVAudioPCMBuffer
 - my_application.cc
-- audio_frame_capture_test.dart
-- vDSP_Length
+- package:flutter_test/flutter_test.dart
 - lib/src/track/web/_audio_html.dart
 - transcription_stream_receiver_test.dart
 - lib/src/types/audio_encoding.dart
-- lib/src/types/video_encoding.dart
-- lib/src/utils/ttl_map.dart
+- video_encoding.dart
 - SampleUploader
 - participant_stats.dart
 - FlutterWindow
@@ -245,846 +188,585 @@
 - e2ee.utils.dart
 - AudioRenderer
 - Visualizer
-- AudioResamplerTest
+- .resample
 - exts.dart
 - participant_info.dart
-- lib/src/agent/chat/message.dart
-- lib/src/token_source/room_configuration.dart
+- message.dart
+- room_configuration.dart
 - Float
-- pffft.c
+- pffft_new_setup
 - FFTAudioAnalyzer
-- lib/src/e2ee/options.dart
+- e2ee/options.dart
 - SampleHandler
-- $0
-- win32_window.cpp
-- datachannel_mock.dart
-- fft_processor.cpp
+- toString$0$
+- .CreateAndShow
+- int? get
 - Float
-- package.json
-- lib/src/token_source/endpoint.dart
+- index.js
+- endpoint.dart
 - Audio session management
-- package:flutter/foundation.dart
+- package:flutter/material.dart
 - LKAudioTrack
-- BundleInfo
-- Win32Window
+- win32_window.cpp
 - Subscription
-- V
-- wWinMain
+- utils.cpp
 - websocket_mock.dart
 - e2ee.sfi_guard.dart
-- _Value
 - .application
 - manifest.json
-- MessageHandler
 - package:livekit_client/src/proto/livekit_models.pb.dart
-- pffft_transform_internal
 - AudioProcessors
-- lib/src/e2ee/events.dart
 - SampleUploader.swift
-- FlutterMethodChannel
-- AudioResampler
 - AudioReceiverStats
-- RTCMediaStreamTrack
+- NSObject
 - lib/src/agent/constants.dart
 - lib/src/data_stream/errors.dart
 - lib/src/track/web/_audio_context.dart
-- src/support/value_or_absent.dart
 - LiveKit Flutter Example
-- Point
 - Size
-- FFTSetup
 - vercel.json
-- AudioProcessors
 - MainFlutterWindow
 - convertToFastObject
 - BroadcastBundleInfo
-- .requestActivation
 - vercel-build.sh
 - bootstrap.sh
 - CLAUDE.md
 - LKColors
 - LaunchImage.imageset/README.md
 - RTCPeerConnection
-- AudioFormat
-- AudioTrack
-- bool?
-- double?
-- EventChannel?
-- int?
-- Stream
-- String?
-- Track
 
 ## God Nodes (most connected - your core abstractions)
 1. `_` - 170 edges
 2. `CHANGELOG` - 114 edges
 3. `InternalEvent` - 61 edges
-4. `InternalEvent` - 61 edges
-5. `_` - 55 edges
-6. `Engine` - 52 edges
-7. `Engine` - 47 edges
-8. `Room` - 40 edges
-9. `_` - 40 edges
-10. `Room` - 40 edges
+4. `_` - 55 edges
+5. `Engine` - 52 edges
+6. `Room` - 40 edges
+7. `_` - 40 edges
+8. `RoomEvent` - 39 edges
+9. `_eval$1()` - 37 edges
+10. `LiveKitPlugin` - 34 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `call$1()` --indirect_call--> `enabled()`  [INFERRED]
+  example/web/e2ee.worker.dart.js → functions/tokenGrant.test.js
+- `TestE2EEManager` --implements--> `E2EEManager`  [EXTRACTED]
+  test/mock/e2ee_fake_manager.dart → lib/src/e2ee/e2ee_manager.dart
+- `TestDisposable` --inherits--> `Disposable`  [EXTRACTED]
+  test/support/disposable_test.dart → lib/src/support/disposable.dart
+- `LKLocalAudioTrack` --references--> `LocalAudioTrack`  [EXTRACTED]
+  android/src/main/kotlin/io/livekit/plugin/LKLocalAudioTrack.kt → lib/src/track/local/audio.dart
 - `_RoomPageState` --calls--> `TrackE2EEStateEvent`  [EXTRACTED]
   example/lib/pages/room.dart → lib/src/e2ee/events.dart
-- `_RoomPageState` --calls--> `DataReceivedEvent`  [EXTRACTED]
-  example/lib/pages/room.dart → lib/src/events.dart
-- `_RoomPageState` --calls--> `LocalTrackPublishedEvent`  [EXTRACTED]
-  example/lib/pages/room.dart → lib/src/events.dart
-- `_RoomPageState` --calls--> `LocalTrackUnpublishedEvent`  [EXTRACTED]
-  example/lib/pages/room.dart → lib/src/events.dart
-- `_RoomPageState` --calls--> `ParticipantEvent`  [EXTRACTED]
-  example/lib/pages/room.dart → lib/src/events.dart
 
 ## Import Cycles
 - None detected.
 
-## Communities (309 total, 22 thin omitted)
+## Communities (241 total, 48 thin omitted)
 
-### Community 0 - "src/proto/livekit_models.pb.dart"
-Cohesion: 0.00
-Nodes (561): ClientInfo_SDK get, DataPacket_Kind get, DataStream_ByteHeader get, DataStream_Chunk get, DataTrackExtensionID get, EncryptedPacket get, Encryption_Type get, FilterParams get (+553 more)
-
-### Community 1 - "src/proto/livekit_rtc.pb.dart"
-Cohesion: 0.00
-Nodes (423): CandidateProtocol get, ConnectionSettings get, DataTrackSubscriberHandles get, JoinResponse get, livekit_models.pb.dart, MediaSectionsRequirement get, ParticipantUpdate get, Ping get (+415 more)
-
-### Community 2 - "livekit_models.pbenum.dart"
-Cohesion: 0.01
-Nodes (153): AAC, AC_MP3, ACTIVE, AGENT, AGENT_ERROR, ANDROID, AUDIO, AudioCodec (+145 more)
-
-### Community 3 - "src/core/engine.dart"
-Cohesion: 0.02
-Nodes (99): RTCDataChannel? get, ServerInfo? get, signal_client.dart, addTrack, asDataPacket, asEncryptablePacket, _attemptingReconnect, attemptReconnect (+91 more)
-
-### Community 4 - "src/core/room.dart"
-Cohesion: 0.02
-Nodes (88): ConnectOptions get, engine.dart, participant_collection.dart, pending_track_queue.dart, RoomOptions get, ../rpc/rpc_client_manager.dart, activeSpeakers, _applyRoomUpdate (+80 more)
-
-### Community 5 - "src/internal/events.dart"
-Cohesion: 0.03
-Nodes (71): DisconnectReason get, RpcError get, RTCIceCandidate, ack, action, allowed, attempt, candidate (+63 more)
-
-### Community 6 - "lib/livekit_client.dart"
-Cohesion: 0.05
-Nodes (73): kRpcVesion, kRpcVesion, src/agent/agent.dart, src/agent/chat/message.dart, src/agent/chat/message_receiver.dart, src/agent/chat/message_sender.dart, src/agent/chat/text_message_sender.dart, src/agent/chat/transcription_stream_receiver.dart (+65 more)
-
-### Community 7 - "src/agent/session.dart"
-Cohesion: 0.04
-Nodes (56): chat/message.dart, chat/text_message_sender.dart, chat/transcription_stream_receiver.dart, ../core/room_preconnect.dart, _agent, _agentTimeoutTimer, _cancelReceiverSubscriptions, cause (+48 more)
-
-### Community 8 - "src/options.dart"
-Cohesion: 0.04
-Nodes (57): DegradationPreferenceExt, adaptiveStream, AudioPublishOptions, autoSubscribe, backupCodecs, BackupVideoCodec, camera, clientProtocolVersion (+49 more)
-
-### Community 9 - "src/proto/livekit_metrics.pb.dart"
-Cohesion: 0.04
-Nodes (50): clearDuration, clearEndTimestampMs, clearLabel, clearMetadata, clearNormalizedEndTimestamp, clearNormalizedStartTimestamp, clearNormalizedTimestamp, clearParticipantIdentity (+42 more)
-
-### Community 10 - "src/participant/participant.dart"
-Cohesion: 0.04
-Nodes (45): ParticipantKind get, ParticipantState get, ../publication/track_publication.dart, addTrackPublication, attributes, audioLevel, audioTrackPublications, clientProtocol (+37 more)
-
-### Community 11 - "src/utils.dart"
-Cohesion: 0.04
-Nodes (50): livekit.dart, package:device_info_plus/device_info_plus.dart, buildStreamId, buildUri, _clampSimulcastPreset, _clientInfo, codec, compareVersions (+42 more)
-
-### Community 12 - "@internal"
-Cohesion: 0.03
-Nodes (86): @internal, iceRestart, RTCOfferOptions, toMap, buildUpdateTrackSettings, dimensions, high, minDimensions (+78 more)
-
-### Community 13 - "src/stats/stats.dart"
-Cohesion: 0.04
-Nodes (48): audio_source_stats.dart, audioSourceStats, bytesNow, bytesPrev, bytesReceived, bytesSent, channels, clockRate (+40 more)
-
-### Community 14 - "src/core/signal_client.dart"
-Cohesion: 0.04
-Nodes (46): _canQueue, cleanUp, _clearPingInterval, _clearPingTimeout, clearQueue, connect, _connectionState, _connectivityResult (+38 more)
-
-### Community 15 - "src/managers/event.dart"
-Cohesion: 0.11
-Nodes (20): E?, ../../exceptions.dart, cancelAll, createListener, emit, emitQueued, emitter, events (+12 more)
-
-### Community 16 - "src/track/options.dart"
-Cohesion: 0.04
-Nodes (51): AudioProcessingOptions get, processor_native.dart, AudioCaptureOptions, AudioOutputOptions, AudioProcessingFailureReason, _audioProcessingMessageOrDefault, AudioProcessingOptions, autoGainControl (+43 more)
-
-### Community 17 - "src/types/data_stream.dart"
-Cohesion: 0.04
-Nodes (44): ../data_stream/errors.dart, Encryption_Type?, attachedFiles, attachedStreamIds, attachments, attributes, ByteStreamHandler, ChatMessage (+36 more)
-
-### Community 18 - "other.dart"
-Cohesion: 0.05
-Nodes (43): ReliabilityExt, RTCIceTransportPolicyExt, AdaptiveStreamPixelDensity, allowedTrackSids, allTracksAllowed, auto, CancelListenFunc, compareTo (+35 more)
-
-### Community 19 - "src/participant/local.dart"
-Cohesion: 0.05
-Nodes (41): ../core/transport.dart, ../data_stream/stream_writer.dart, package:async/async.dart, package:mime_type/mime_type.dart, _allParticipantsAllowed, audioTrackPublications, _broadcastStateChanged, createFromInfo (+33 more)
-
-### Community 20 - "../events.dart"
-Cohesion: 0.04
-Nodes (69): ../audio_management.dart, ../events.dart, ../internal/events.dart, _audioProcessingFailureReason, code, create, _currentBitrate, currentOptions (+61 more)
-
-### Community 21 - "src/audio/audio_manager.dart"
-Cohesion: 0.05
-Nodes (37): audio_processing_state.dart, AudioEngineState get, AudioSessionOptions get, _applyCurrentAudioSessionPolicy, applyOptionsForConnect, AudioEngineState, _audioEngineStateController, audioEngineStateStream (+29 more)
-
-### Community 22 - "src/token_source/jwt.dart"
-Cohesion: 0.05
-Nodes (38): JWT, LiveKitClaims, LiveKitVideoGrant? get, attributes, canPublish, canPublishData, canPublishSources, canSubscribe (+30 more)
-
-### Community 23 - "src/publication/remote.dart"
-Cohesion: 0.05
-Nodes (38): package:flutter/widgets.dart, UpdateTrackSettings, _adaptiveStreamActive, _adaptiveStreamDimensions, _adaptiveStreamVisible, _buildTrackSettings, _cancelPendingTrackSettingsUpdateRequest, _computeVideoViewVisibility (+30 more)
-
-### Community 24 - "src/types/video_parameters.dart"
-Cohesion: 0.05
-Nodes (41): all169, all43, allScreenShare, compareTo, defaultSimulcast169, defaultSimulcast43, description, dimensions (+33 more)
-
-### Community 25 - "src/events.dart"
-Cohesion: 0.05
-Nodes (80): E2EEManager, TrackE2EEStateEvent, activeRecording, ActiveSpeakersChangedEvent, attempt, attributes, AudioPlaybackStatusChanged, bitrateForLayers (+72 more)
-
-### Community 26 - "src/widgets/video_track_renderer.dart"
+### Community 0 - "_eval$1"
 Cohesion: 0.06
-Nodes (36): RTCVideoRenderer?, adaptiveStreamPixelDensity, _aspectRatio, _attach, autoCenter, autoDisposeRenderer, build, cachedRenderer (+28 more)
+Nodes (53): _addListener$1(), _addPending$1(), _asyncComplete$1(), _asyncCompleteWithValue$1(), _asyncReturn(), _awaitOnObject(), _bind$1(), _BufferingStreamSubscription__registerErrorHandler() (+45 more)
 
-### Community 27 - "src/types/rpc.dart"
+### Community 1 - "call$1"
+Cohesion: 0.08
+Nodes (41): add$1(), add$1$ax(), addAll$1(), _asJSObject(), call$1(), _checkPosition$3(), _computeKeys$0(), deriveKeys$2() (+33 more)
+
+### Community 2 - "log$4"
+Cohesion: 0.09
+Nodes (37): _addEventError$0(), contains$1(), decodeFunction$2(), decodeFunction$body$FrameCryptor(), decrypt$2(), decrypt$body$E2EEDataPacketCryptor(), decryptionFailure$0(), encodeFunction$2() (+29 more)
+
+### Community 3 - "SignalClient"
+Cohesion: 0.13
+Nodes (28): SignalClient, SignalClientInternalMethods, SignalEvent, SignalAnswerEvent, SignalConnectedEvent, SignalConnectingEvent, SignalConnectionQualityUpdateEvent, SignalConnectivityChangedEvent (+20 more)
+
+### Community 5 - ".call$1"
+Cohesion: 0.10
+Nodes (18): _asyncStartSync(), _callDartFunctionFast1(), _callDartFunctionFast2(), dartify(), initNativeDispatchContinue(), _invokeClosure(), IterableExtension_firstWhereOrNull(), jsify() (+10 more)
+
+### Community 7 - "e2ee.worker.dart"
+Cohesion: 0.11
+Nodes (11): cryptor, getDataPacketCryptor, getTrackCryptor, handleMessage, keyProviders, main, participantCryptors, participantDataCryptors (+3 more)
+
+### Community 8 - "$indexSet"
+Cohesion: 0.13
+Nodes (18): _addHashTableEntry$3(), containsKey$1(), fillLiteralMap(), _findBucketIndex$2(), _get$1(), _getBucket$2(), $indexSet(), internalFindBucketIndex$2() (+10 more)
+
+### Community 9 - "LKRemoteAudioTrack"
+Cohesion: 0.23
+Nodes (3): LKRemoteAudioTrack, LKRemoteAudioTrack, LKRemoteAudioTrack
+
+### Community 10 - "_removeListeners$0"
+Cohesion: 0.19
+Nodes (14): _asyncCompleteErrorObject$1(), _asyncRethrow(), _cloneResult$1(), completeError$1(), completeError$2(), _completeErrorObject$1(), _completeWithResultOf$1(), _completeWithValue$1() (+6 more)
+
+### Community 11 - "caching_token_source_test.dart"
+Cohesion: 0.17
+Nodes (9): exp, fetch, _generateExpiredToken, _generateValidToken, jwt, main, now, payload (+1 more)
+
+### Community 12 - "audio_visualizer.cpp"
+Cohesion: 0.36
+Nodes (4): centerBands(), computeBands(), CurrentTime(), magnitudeIndex()
+
+### Community 13 - "RTCAudioRenderer"
+Cohesion: 0.27
+Nodes (3): AudioTrack, AudioTrack, AudioTrack
+
+### Community 14 - "assist_token.dart"
+Cohesion: 0.22
+Nodes (7): AssistGrant, data, fetchAssistGrant, result, room, token, url
+
+### Community 15 - "package.json"
+Cohesion: 0.29
+Nodes (6): dependencies, livekit-server-sdk, livekit-server-sdk, name, private, type
+
+### Community 17 - "_shrOtherPositive$1"
+Cohesion: 0.33
+Nodes (6): _Base64Decoder__allocateBuffer(), _Base64Decoder_decodeChunk(), matchTypeError$1(), _shrBothPositive$1(), _shrOtherPositive$1(), _unwrapNonDartException()
+
+### Community 18 - "copyProperties"
+Cohesion: 0.33
+Nodes (6): copyProperties(), inherit(), inheritMany(), setOrUpdateInterceptorsByTag(), setOrUpdateLeafTags(), updateHolder()
+
+### Community 19 - "video_track_view_registration.dart"
+Cohesion: 0.33
+Nodes (4): key, pixelDensity, VideoTrackViewRegistration, AdaptiveStreamPixelDensity
+
+### Community 20 - "local/audio.dart"
+Cohesion: 0.04
+Nodes (39): audioLevel, AudioSourceStats, echoReturnLoss, echoReturnLossEnhancement, fromReport, remoteSource, totalAudioEnergy, totalSamplesDuration (+31 more)
+
+### Community 21 - "convert$1"
+Cohesion: 0.40
+Nodes (5): convert$1(), decode$3(), encode$4(), _tdivFast$1(), _tdivSlow$1()
+
+### Community 22 - "installInstanceTearOff"
+Cohesion: 0.40
+Nodes (5): installInstanceTearOff(), installStaticTearOff(), instanceTearOffGetter(), staticTearOffGetter(), tearOffParameters()
+
+### Community 23 - "asUint8List$0"
+Cohesion: 0.50
+Nodes (4): asUint8List$0(), asUint8List$0$x(), asUint8List$2(), asUint8List$2$x()
+
+### Community 24 - "getTag"
+Cohesion: 0.50
+Nodes (4): getTag(), getTagFirefox(), getTagFixed(), getTagIE()
+
+### Community 25 - "get$stackTrace"
+Cohesion: 0.67
+Nodes (3): AsyncError_defaultStackTrace(), get$stackTrace(), _interceptUserError()
+
+### Community 26 - "_TokenSourceConfiguration"
+Cohesion: 0.67
+Nodes (3): _ConfigurableTokenSourceConfiguration, _FixedTokenSourceConfiguration, _TokenSourceConfiguration
+
+### Community 27 - "VideoDimensions"
+Cohesion: 0.67
+Nodes (3): VideoDimensions, VideoDimensionsHelpers, VideoDimensionsPresets
+
+### Community 28 - "local/local.dart"
 Cohesion: 0.05
-Nodes (36): applicationError, builtIn, callerIdentity, code, connectionTimeout, data, destinationIdentity, errorMessages (+28 more)
+Nodes (29): addAudioRenderer, addViewRegistration, _AudioCaptureGroup, _capture, _captureGroups, codec, createStream, currentOptions (+21 more)
 
-### Community 28 - "lib/src/track/local/local.dart"
-Cohesion: 0.03
-Nodes (65): abstract LocalTrackOptions, addAudioRenderer, addViewRegistration, _AudioCaptureGroup, _capture, _captureGroups, codec, createStream (+57 more)
-
-### Community 29 - "lib/src/preconnect/pre_connect_audio_buffer.dart"
-Cohesion: 0.03
-Nodes (67): ../../audio/audio_frame_capture.dart, agentReadyFuture, _agentReadyManager, _audioCapture, _buffer, bufferedSize, dataTopic, defaultChunkSize (+59 more)
-
-### Community 30 - "src/e2ee/key_provider.dart"
-Cohesion: 0.07
-Nodes (26): KeyProvider get, create, defaultDiscardFrameWhenCryptorNotReady, defaultFailureTolerance, defaultKeyRingSize, defaultMagicBytes, defaultRatchetSalt, defaultRatchetWindowSize (+18 more)
+### Community 29 - "pre_connect_audio_buffer.dart"
+Cohesion: 0.05
+Nodes (30): agentReadyFuture, _agentReadyManager, _audioCapture, _buffer, bufferedSize, dataTopic, defaultChunkSize, defaultMaxSize (+22 more)
 
 ### Community 31 - "_"
-Cohesion: 0.03
-Nodes (67): _, ACTIVE, CandidateProtocol, DISCONNECT, DUPLICATE_HANDLE, DUPLICATE_NAME, GZIP, INVALID_HANDLE (+59 more)
+Cohesion: 0.05
+Nodes (31): _, ACTIVE, CandidateProtocol, DISCONNECT, DUPLICATE_HANDLE, DUPLICATE_NAME, GZIP, INVALID_HANDLE (+23 more)
 
-### Community 32 - "InternalEvent"
-Cohesion: 0.11
-Nodes (60): Engine, Room, SignalClient, EngineEvent, InternalEvent, LiveKitEvent, SignalEvent, EngineActiveSpeakersUpdateEvent (+52 more)
-
-### Community 33 - "lib/src/agent/agent.dart"
-Cohesion: 0.04
-Nodes (55): AgentFailure? get, AgentState? get, constants.dart, ../json/agent_attributes.dart, AgentFailure, _AgentLifecycle, agentState, audioTrack (+47 more)
-
-### Community 34 - "src/types/video_dimensions.dart"
-Cohesion: 0.06
-Nodes (32): area, aspect, aspect169, aspect43, copyWith, h1080_169, h1080_43, h120_43 (+24 more)
-
-### Community 35 - "src/track/local/video.dart"
-Cohesion: 0.06
-Nodes (31): audio.dart, covariant VideoCaptureOptions, VideoSenderStatsEvent, addSimulcastTrack, _bitrateFoLayers, codec, createCameraTrack, createScreenShareTrack (+23 more)
+### Community 33 - "agent.dart"
+Cohesion: 0.08
+Nodes (20): AgentFailure, _AgentLifecycle, agentState, audioTrack, avatarVideoTrack, connected, connecting, disconnected (+12 more)
 
 ### Community 36 - "package:flutter_webrtc/flutter_webrtc.dart"
-Cohesion: 0.09
-Nodes (27): AudioContext, HTMLAudioElement?, AudioProcessorOptions, VideoProcessorOptions, ProcessorOptions, audioContext, audioElement, AudioProcessorOptions (+19 more)
-
-### Community 37 - "src/core/transport.dart"
 Cohesion: 0.07
-Nodes (28): ../internal/types.dart, package:sdp_transform/sdp_transform.dart, addIceCandidate, _bitrateTrackers, _cancelDebounce, cid, codec, connectOptions (+20 more)
+Nodes (22): destroy, init, kind, name, AudioProcessorOptions, VideoProcessorOptions, onPublish, onUnpublish (+14 more)
 
-### Community 38 - "src/agent/chat/transcription_stream_receiver.dart"
-Cohesion: 0.05
-Nodes (37): dispose, MessageReceiver, messages, MessageSender, send, TextMessageSender, append, _AttributeKeys (+29 more)
-
-### Community 39 - "src/track/track.dart"
-Cohesion: 0.07
-Nodes (28): MediaStream get, _active, _cid, disable, enable, getCid, isActive, kind (+20 more)
-
-### Community 40 - "src/e2ee/e2ee_manager.dart"
-Cohesion: 0.09
-Nodes (21): BaseKeyProvider get, _addRtpReceiver, _addRtpSender, _algorithm, _cleanUp, _dataPacketCryptor, _e2eeStateFromFrameCryptoState, _enabled (+13 more)
-
-### Community 41 - "src/utils/data_packet_buffer.dart"
-Cohesion: 0.07
-Nodes (26): double get, DataPacket, alignBufferedAmount, _buffer, BufferedDataPacket, clear, countUtilization, DataPacketBuffer (+18 more)
-
-### Community 42 - "src/token_source/caching.dart"
-Cohesion: 0.10
-Nodes (21): _cached, cachedResponse, CachedTokenSource, CachingTokenSource, clear, _defaultValidator, fetch, fromJson (+13 more)
-
-### Community 43 - "livekit_metrics.pbenum.dart"
-Cohesion: 0.08
-Nodes (25): AGENTS_LLM_TTFT, AGENTS_STT_TTFT, AGENTS_TTS_TTFB, CLIENT_AUDIO_SUBSCRIBER_CONCEALED_SAMPLES, CLIENT_AUDIO_SUBSCRIBER_CONCEALMENT_EVENTS, CLIENT_AUDIO_SUBSCRIBER_INTERRUPTION_COUNT, CLIENT_AUDIO_SUBSCRIBER_SILENT_CONCEALED_SAMPLES, CLIENT_AUDIO_SUBSCRIBER_TOTAL_INTERRUPTION_DURATION (+17 more)
-
-### Community 44 - "audio_session.dart"
-Cohesion: 0.07
-Nodes (27): android, AndroidAudioAttributesContentType, AndroidAudioAttributesUsageType, AndroidAudioFocusMode, AndroidAudioMode, AndroidAudioStreamType, apple, AppleAudioCategory (+19 more)
-
-### Community 45 - "lib/src/proto/livekit_models.pb.dart"
+### Community 45 - "livekit_models.pb.dart"
 Cohesion: 0.00
-Nodes (562): ActiveSpeakerUpdate get, BackupCodecPolicy get, ChatMessage, ChatMessage get, ClientConfigSetting get, DataStream_Header get, DataStream_OperationType get, DataStream_TextHeader get (+554 more)
+Nodes (513): active, activeRecording, ActiveSpeakerUpdate, address, afterId, agent, agentProtocol, at (+505 more)
 
-### Community 46 - "src/hardware/hardware.dart"
-Cohesion: 0.06
-Nodes (34): @Deprecated, setSpeakerOn, setAutomaticConfigurationEnabled, setPreferSpeakerOutput, setSpeakerphoneOn, setSpeakerOn, audioInputs, audioOutputs (+26 more)
+### Community 48 - "static const"
+Cohesion: 0.10
+Nodes (10): androidAudioSessionConfigurationToMap, configureAndroidAudioSession, setAndroidAudioSessionConfiguration, initialize, LiveKitClient, version, liveKitWebRTCInitializeOptions, NativeAudioManagement (+2 more)
 
-### Community 47 - "src/publication/track_publication.dart"
-Cohesion: 0.07
-Nodes (27): abstract final Participant, LKTrackSourceExt, LKTrackSourceExt, TrackInfo, _attachTrackListener, dimensions, hashCode, isScreenShare (+19 more)
+### Community 54 - "agent_attributes.dart"
+Cohesion: 0.10
+Nodes (19): agentAttributesFromJson, agentAttributesToJson, AgentInput, AgentOutput, AgentState, _boolFromJson, _boolToJson, fromJson (+11 more)
 
-### Community 48 - "../support/platform.dart"
-Cohesion: 0.09
-Nodes (26): ../audio/android_audio_session_adapter.dart, ../audio/audio_manager.dart, ../audio/audio_session.dart, initialize, LiveKitClient, version, liveKitWebRTCInitializeOptions, NativeAudioManagement (+18 more)
+### Community 56 - "websocket/web.dart"
+Cohesion: 0.10
+Nodes (19): connect, LiveKitWebSocketIO, lkWebSocketConnect, options, send, _subscription, _ws, LiveKitWebSocket (+11 more)
 
-### Community 49 - "src/widgets/screen_select_dialog.dart"
-Cohesion: 0.07
-Nodes (26): DesktopCapturerSource, Dialog, ScreenSelectDialog, build, _cancel, cancelText, createState, deactivate (+18 more)
+### Community 61 - "_audio_analyser.dart"
+Cohesion: 0.10
+Nodes (18): analyser, AudioAnalyser, AudioAnalyserOptions, audioContext, calculateVolume, cleanup, cloneTrack, createAudioAnalyser (+10 more)
 
-### Community 50 - "src/audio/audio_processing_state.dart"
-Cohesion: 0.08
-Nodes (23): AudioProcessingComponentRequest, AudioProcessingComponentState, AudioProcessingImplementation, AudioProcessingState, autoGainControl, echoCancellation, effective, enabled (+15 more)
-
-### Community 51 - "src/token_source/room_configuration.dart"
+### Community 62 - "stream_writer.dart"
 Cohesion: 0.12
-Nodes (15): package:json_annotation/json_annotation.dart, agentName, agents, departureTimeout, deployment, emptyTimeout, fromJson, maxParticipants (+7 more)
+Nodes (14): BaseStreamWriter, ByteStreamWriter, chunkId, close, destinationIdentities, engine, info, splitChunk (+6 more)
 
-### Community 52 - "src/track/audio_visualizer_web.dart"
-Cohesion: 0.05
-Nodes (42): audio_visualizer.dart, AudioVisualizerOptions, _audioTrack, createVisualizerImpl, _eventChannel, mediaStreamTrack, start, stop (+34 more)
-
-### Community 53 - "src/participant/remote.dart"
-Cohesion: 0.09
-Nodes (24): ../publication/remote.dart, TrackPublishedEvent, TrackUnpublishedEvent, AudioPlaybackFailed, AudioPlaybackStarted, addSubscribedMediaTrack, _addTracks, audioTrackPublications (+16 more)
-
-### Community 54 - "lib/src/json/agent_attributes.dart"
-Cohesion: 0.05
-Nodes (40): ../agent/constants.dart, @JsonEnum, agentAttributesFromJson, agentAttributesToJson, AgentInput, AgentOutput, AgentState, _boolFromJson (+32 more)
-
-### Community 55 - "../core/room.dart"
-Cohesion: 0.08
-Nodes (26): ../core/room.dart, _controller, dispose, messages, _room, send, sendText, topic (+18 more)
-
-### Community 56 - "../extensions.dart"
-Cohesion: 0.06
-Nodes (40): dart:js_interop, ../extensions.dart, connect, LiveKitWebSocketIO, lkWebSocketConnect, options, send, _subscription (+32 more)
-
-### Community 57 - "src/support/region_url_provider.dart"
-Cohesion: 0.09
-Nodes (22): attemptedRegions, fetchRegionSettings, fromJson, getCloudConfigUrl, getNextBestRegionUrl, getServerUrl, isCloud, isCloudUrl (+14 more)
-
-### Community 58 - "src/support/platform.dart"
-Cohesion: 0.10
-Nodes (19): BrowserType, BrowserVersion, false, isChrome129OrLater, lkBrowser, lkBrowserVersion, lkPlatform, lkPlatformIs (+11 more)
-
-### Community 59 - "src/core/pending_track_queue.dart"
-Cohesion: 0.10
-Nodes (19): clear, emitException, enqueue, expiresAt, flush, maxSize, participantSid, _pending (+11 more)
-
-### Community 60 - "src/rpc/rpc_client_manager.dart"
-Cohesion: 0.10
-Nodes (20): ackTimer, _complete, completer, destinationIdentity, dispose, done, handleIncomingRpcAck, handleIncomingRpcResponse (+12 more)
-
-### Community 61 - "src/track/web/_audio_analyser.dart"
-Cohesion: 0.10
-Nodes (19): AnalyserNode, analyser, AudioAnalyser, AudioAnalyserOptions, audioContext, calculateVolume, cleanup, cloneTrack (+11 more)
-
-### Community 62 - "lib/src/data_stream/stream_writer.dart"
-Cohesion: 0.07
-Nodes (34): ../core/engine.dart, InfoType, BaseStreamWriter, ByteStreamWriter, chunkId, close, destinationIdentities, engine (+26 more)
-
-### Community 63 - "src/audio/audio_frame_capture_web.dart"
-Cohesion: 0.07
-Nodes (32): audio_pcm_utils.dart, AudioNode?, AudioWorkletNode?, AudioWorkletProcessor, _audioContext, AudioRendererProcessor, _controller, createAudioFrameCaptureImpl (+24 more)
-
-### Community 64 - "Timer?"
-Cohesion: 0.06
-Nodes (34): Completer, _clearTimer, complete, _completeCurrent, completeError, _completer, _createCompleter, dispose (+26 more)
-
-### Community 65 - "src/track/web/_audio_html.dart"
+### Community 63 - "audio_frame_capture_web.dart"
 Cohesion: 0.11
-Nodes (17): audio, audioContainerId, _audioContext, audioElement, _audioElements, audioPrefix, audioStream, div (+9 more)
+Nodes (13): _audioContext, AudioRendererProcessor, _controller, createAudioFrameCaptureImpl, frameStream, _onWorkletMessage, _sourceNode, start (+5 more)
 
-### Community 66 - "lib/src/proto/livekit_rtc.pb.dart"
+### Community 64 - "dart:async"
+Cohesion: 0.05
+Nodes (36): _clearTimer, complete, _completeCurrent, completeError, _completer, _createCompleter, dispose, _hasPendingListener (+28 more)
+
+### Community 66 - "livekit_rtc.pb.dart"
 Cohesion: 0.00
-Nodes (424): AddTrackRequest get, ConnectionQualityUpdate get, LeaveRequest get, action, adaptiveStream, addTrack, AddTrackRequest, allowed (+416 more)
+Nodes (369): action, adaptiveStream, addTrack, AddTrackRequest, allowed, allParticipants, allTracks, alternativeUrl (+361 more)
 
-### Community 67 - "src/extensions.dart"
-Cohesion: 0.06
-Nodes (39): ICEServerExt, PBStreamStateExt, RTCDataChannelExt, RTCIceCandidateExt, RTCPeerConnectionStateExt, RTCSessionDescriptionExt, SessionDescriptionExt, WidgetsBindingCompatible (+31 more)
-
-### Community 68 - "@immutable"
-Cohesion: 0.13
-Nodes (15): @immutable, AndroidAudioSessionConfiguration, AppleAudioSessionConfiguration, ParticipantTrackPermissionExt, ParticipantTrackPermission, RTCConfiguration, RTCIceServer, ParticipantPermissions (+7 more)
-
-### Community 69 - "exceptions.dart"
-Cohesion: 0.18
-Nodes (17): ConnectException, ConnectionErrorReason, DataPublishException, LiveKitE2EEException, LiveKitException, MediaConnectException, message, NegotiationError (+9 more)
-
-### Community 70 - "src/types/audio_encoding.dart"
-Cohesion: 0.12
-Nodes (17): AudioEncoding, AudioEncodingExt, bitratePriority, copyWith, hashCode, maxBitrate, networkPriority, operator (+9 more)
-
-### Community 71 - "src/utils/ttl_map.dart"
-Cohesion: 0.12
-Nodes (16): _cleanup, _cleanupTimer, clear, delete, dispose, expiry, has, isExpired (+8 more)
-
-### Community 72 - "src/audio/audio_frame_capture.dart"
-Cohesion: 0.11
-Nodes (18): AudioFormat, AudioFrame, AudioFrameCallback, AudioFrameCapture, AudioRendererOptions, channels, createAudioFrameCapture, data (+10 more)
-
-### Community 73 - "lib/src/support/native_audio.dart"
-Cohesion: 0.09
-Nodes (22): AppleAudioCategory, AppleAudioMode, appleAudioCategory, AppleAudioCategoryExt, appleAudioCategoryOptions, appleAudioMode, AppleAudioModeExt, copyWith (+14 more)
+### Community 73 - "native_audio.dart"
+Cohesion: 0.14
+Nodes (13): AppleAudioCategory, AppleAudioCategoryOption, AppleAudioMode, appleAudioCategory, AppleAudioCategoryExt, AppleAudioCategoryOptionExt, appleAudioCategoryOptions, appleAudioMode (+5 more)
 
 ### Community 74 - "theme.dart"
 Cohesion: 0.01
-Nodes (189): Color, EdgeInsets, accentColor, accentFgDark, accentFgLight, accentMutedDark, accentMutedLight, amber100 (+181 more)
+Nodes (192): accentFgDark, accentFgLight, accentMutedDark, accentMutedLight, amber100, amber200, amber300, amber400 (+184 more)
 
-### Community 75 - "Map"
-Cohesion: 0.06
-Nodes (30): ../data_stream/stream_reader.dart, _dispatch, handleIncomingV1Request, handleIncomingV2RequestStream, handlers, _publishAck, _publishV1Response, _publishV2Response (+22 more)
-
-### Community 76 - "src/types/video_encoding.dart"
-Cohesion: 0.12
-Nodes (15): Comparable, ChangeLevel, ClientProtocolVersion, bitratePriority, compareTo, copyWith, hashCode, maxBitrate (+7 more)
-
-### Community 77 - "lib/src/audio/audio_frame_capture_native.dart"
-Cohesion: 0.11
-Nodes (18): audio_frame_capture.dart, _controller, createAudioFrameCaptureImpl, _eventChannel, frameStream, _rendererId, start, stop (+10 more)
-
-### Community 78 - "../../proto/livekit_rtc.pb.dart"
-Cohesion: 0.14
-Nodes (14): BackupVideoCodec, backupVideoCodec, mute, participant, toPBTrackPublishedResponse, unmute, ../../proto/livekit_rtc.pb.dart, backupVideoCodec (+6 more)
-
-### Community 79 - "src/data_stream/stream_reader.dart"
-Cohesion: 0.12
-Nodes (18): errors.dart, BaseStreamReader, _bytesReceived, ByteStreamReader, handleChunkReceived, _info, listen, readAll (+10 more)
-
-### Community 80 - "src/agent/chat/message.dart"
-Cohesion: 0.16
-Nodes (15): AgentTranscript, content, copyWith, hashCode, id, operator, ReceivedMessage, ReceivedMessageContent (+7 more)
+### Community 77 - "audio_frame_capture_native.dart"
+Cohesion: 0.13
+Nodes (12): AudioFrameCapture, AudioFrameCaptureNative, _controller, createAudioFrameCaptureImpl, _eventChannel, frameStream, _rendererId, start (+4 more)
 
 ### Community 81 - "e2ee.worker.dart.js"
 Cohesion: 0.01
-Nodes (33): be(), bW(), copyProperties(), cR(), ey(), getTag(), getTagFirefox(), getTagFixed() (+25 more)
+Nodes (16): bindCallbackGuarded$1(), call$2(), getUnknownTag(), getUnknownTagGenericBrowser(), mixinEasy(), mixinHard(), mixinPropertiesEasy(), mixinPropertiesHard() (+8 more)
 
-### Community 82 - "lib/src/support/platform/web.dart"
-Cohesion: 0.07
-Nodes (25): dart:js_interop_unsafe, appVersion, chromeBased, isInsertableStreamSupported, isScriptTransformSupported, lkBrowserImplementation, lkBrowserVersionImplementation, lkE2EESupportedImplementation (+17 more)
+### Community 82 - "platform/web.dart"
+Cohesion: 0.14
+Nodes (12): appVersion, chromeBased, isInsertableStreamSupported, isScriptTransformSupported, lkBrowserImplementation, lkBrowserVersionImplementation, lkE2EESupportedImplementation, lkPlatformImplementation (+4 more)
 
-### Community 83 - "src/support/disposable.dart"
-Cohesion: 0.08
-Nodes (31): Session, Transport, AudioSenderStatsEvent, AudioVisualizerEvent, TrackEvent, TrackProcessorUpdateEvent, InternalTrackMuteUpdatedEvent, LocalTrackOptionsUpdatedEvent (+23 more)
-
-### Community 84 - "lib/src/support/websocket.dart"
-Cohesion: 0.08
-Nodes (24): connect, error, message, onData, onDispose, onError, send, WebSocketConnector (+16 more)
+### Community 84 - "websocket.dart"
+Cohesion: 0.10
+Nodes (16): PendingTrackQueue, connect, error, message, onData, onDispose, onError, send (+8 more)
 
 ### Community 85 - "return"
-Cohesion: 0.11
-Nodes (16): endpoint.dart, sanitized, _sanitizeSandboxId, setSinkId, startAllAudioElement, startAudio, stopAudio, true (+8 more)
+Cohesion: 0.18
+Nodes (7): sanitized, _sanitizeSandboxId, setSinkId, startAllAudioElement, startAudio, stopAudio, true
 
-### Community 86 - "typedef"
-Cohesion: 0.08
-Nodes (23): CustomTokenFunction, CustomTokenSource, fetch, _function, fetch, LiteralTokenSource, participantName, participantToken (+15 more)
+### Community 86 - "String"
+Cohesion: 0.20
+Nodes (8): DarwinNotification, broadcastStarted, broadcastStopped, fetch, participantName, participantToken, roomName, serverUrl
 
-### Community 87 - "../support/disposable.dart"
-Cohesion: 0.10
-Nodes (19): audio_visualizer_native.dart, barCount, centeredBands, createVisualizer, smoothTransition, start, stop, _uuid (+11 more)
+### Community 88 - "broadcast_manager.dart"
+Cohesion: 0.17
+Nodes (9): RpcTestController, Agent, BroadcastManager, broadcastStateChanged, _instance, _isBroadcasting, requestActivation, requestStop (+1 more)
 
-### Community 88 - "lib/src/managers/broadcast_manager.dart"
-Cohesion: 0.10
-Nodes (19): ChangeNotifier, RpcTestController, Agent, BroadcastManager, broadcastStateChanged, _instance, _isBroadcasting, requestActivation (+11 more)
+### Community 94 - "src/constants.dart"
+Cohesion: 0.18
+Nodes (8): connection, debounce, defaultTimeouts, iceRestart, peerConnection, publish, subscribe, Timeouts
 
-### Community 89 - "bool get"
-Cohesion: 0.06
-Nodes (31): bool get, Future, int? get, _buffer, ByteRingBuffer, capacity, clear, isEmpty (+23 more)
-
-### Community 90 - "Exception"
-Cohesion: 0.14
-Nodes (13): Exception, PendingTrackQueue, WebSocketException, AudioProcessingException, RpcError, PendingTrackQueue, DataStreamError, DataStreamErrorReason (+5 more)
-
-### Community 91 - "dart:async"
-Cohesion: 0.12
-Nodes (17): dart:async, DataStreamRoomMethods, RoomPreConnect, RoomDebugMethods, RoomHardwareManagementMethods, RoomPrivateMethods, RoomRPCMethods, ../logger.dart (+9 more)
-
-### Community 92 - "src/token_source/endpoint.dart"
-Cohesion: 0.15
-Nodes (12): body, client, EndpointTokenSource, fetch, headers, method, statusCode, TokenSourceHttpException (+4 more)
-
-### Community 93 - "String"
-Cohesion: 0.08
-Nodes (24): DarwinNotification, broadcastStarted, broadcastStopped, audioLevel, AudioSourceStats, echoReturnLoss, echoReturnLossEnhancement, fromReport (+16 more)
-
-### Community 94 - "Duration"
-Cohesion: 0.11
-Nodes (18): Duration, connection, debounce, defaultTimeouts, iceRestart, peerConnection, publish, subscribe (+10 more)
-
-### Community 95 - "lib/src/extensions.dart"
-Cohesion: 0.06
-Nodes (36): ConnectionQualityExt, DataPacketKindExt, DisconnectReasonExt, elementAtOrNull, emit, EncryptionTypeExt, fromJson, instance (+28 more)
+### Community 95 - "extensions.dart"
+Cohesion: 0.05
+Nodes (39): ConnectionQualityExt, DataPacketKindExt, DisconnectReasonExt, elementAtOrNull, emit, EncryptionTypeExt, fromJson, ICEServerExt (+31 more)
 
 ### Community 96 - "_"
 Cohesion: 0.01
-Nodes (154): _, AAC, AC_MP3, ACTIVE, AGENT, AGENT_ERROR, ANDROID, AUDIO (+146 more)
+Nodes (141): _, AAC, AC_MP3, ACTIVE, AGENT, AGENT_ERROR, ANDROID, AUDIO (+133 more)
 
-### Community 97 - "lib/src/internal/events.dart"
-Cohesion: 0.04
-Nodes (138): LeaveRequest_Action get, Engine, Room, SignalClient, EngineEvent, InternalEvent, LiveKitEvent, SignalEvent (+130 more)
+### Community 97 - "internal/events.dart"
+Cohesion: 0.03
+Nodes (68): ack, action, allowed, attempt, candidate, canReconnect, chunk, cid (+60 more)
 
 ### Community 98 - "dart:typed_data"
-Cohesion: 0.19
-Nodes (9): dart:convert, dart:core, dart:typed_data, float32ToFloat32Bytes, float32ToInt16Bytes, out, float32ToFloat32Bytes, float32ToInt16Bytes (+1 more)
+Cohesion: 0.21
+Nodes (4): float32ToFloat32Bytes, float32ToInt16Bytes, out, main
 
-### Community 99 - "dart:io"
-Cohesion: 0.12
-Nodes (16): dart:io, false, lkBrowserImplementation, lkBrowserVersionImplementation, lkE2EESupportedImplementation, lkPlatformImplementation, lkPlatformIsTestImplementation, lkPlatformIsWebMobileImplementation (+8 more)
+### Community 99 - "platform/io.dart"
+Cohesion: 0.20
+Nodes (7): false, lkBrowserImplementation, lkBrowserVersionImplementation, lkE2EESupportedImplementation, lkPlatformImplementation, lkPlatformIsTestImplementation, lkPlatformIsWebMobileImplementation
 
 ### Community 100 - "CHANGELOG"
 Cohesion: 0.02
 Nodes (114): 0.1.0, 0.1.1, 0.2.0, 0.3.0, 0.4.0, 0.4.1, 0.5.0, 0.5.1 (+106 more)
 
-### Community 101 - "../proto/livekit_models.pb.dart"
-Cohesion: 0.07
-Nodes (23): canPublish, canPublishData, canPublishSources, canSubscribe, canUpdateMetadata, hidden, toLKType, ParticipantState (+15 more)
+### Community 101 - "participant_permissions.dart"
+Cohesion: 0.20
+Nodes (9): canPublish, canPublishData, canPublishSources, canSubscribe, canUpdateMetadata, hidden, ParticipantPermissionExt, ParticipantPermissions (+1 more)
 
-### Community 102 - "lib/src/audio/audio_session_policy.dart"
+### Community 102 - "audio_session_policy.dart"
+Cohesion: 0.25
+Nodes (6): AudioSessionOptions, automatic, forceSpeakerOutput, options, preferSpeakerOutput, ResolvedAudioSessionPolicy
+
+### Community 103 - "@immutable"
+Cohesion: 0.09
+Nodes (19): ReceivedMessage, SentMessage, AndroidAudioSessionConfiguration, AppleAudioSessionConfiguration, ParticipantTrackPermissionExt, iceRestart, RTCOfferOptions, toMap (+11 more)
+
+### Community 104 - "package:collection/collection.dart"
 Cohesion: 0.11
-Nodes (17): audio_session.dart, androidAudioSessionConfigurationToMap, configureAndroidAudioSession, setAndroidAudioSessionConfiguration, AudioSessionOptions, automatic, forceSpeakerOutput, options (+9 more)
-
-### Community 103 - "DateTime"
-Cohesion: 0.12
-Nodes (15): DateTime, firstReceivedTime, id, isFinal, language, lastReceivedTime, text, TranscriptionSegment (+7 more)
-
-### Community 104 - "options.dart"
-Cohesion: 0.22
-Nodes (8): ../e2ee/options.dart, agentConnectTimeout, _buildRoom, copyWith, preConnectAudio, room, SessionOptions, options.dart
+Nodes (9): agentParticipant, agentParticipants, AgentRoom, agentConnectTimeout, _buildRoom, copyWith, preConnectAudio, room (+1 more)
 
 ### Community 105 - "AudioTrack"
-Cohesion: 0.07
-Nodes (28): AudioTrackSink, LKLocalAudioTrack, AudioTrack, TrackProcessorUpdateEvent, LocalAudioManagementMixin, LocalAudioTrack, AudioTrack, LocalTrack (+20 more)
+Cohesion: 0.18
+Nodes (8): TrackProcessorUpdateEvent, LocalAudioManagementMixin, LocalAudioTrack, AudioTrack, LocalTrack, LKLocalAudioTrack, LKLocalAudioTrack, LKLocalAudioTrack
 
 ### Community 106 - "List"
+Cohesion: 0.11
+Nodes (17): BaseStreamReader, _bytesReceived, ByteStreamReader, handleChunkReceived, _info, listen, readAll, reader (+9 more)
+
+### Community 108 - "StatelessWidget"
 Cohesion: 0.12
-Nodes (18): BaseStreamReader, _bytesReceived, ByteStreamReader, handleChunkReceived, _info, listen, readAll, reader (+10 more)
+Nodes (13): LiveKitExampleApp, _Notice, ParticipantInfoWidget, RemoteTrackFPSMenuWidget, RemoteTrackPublicationMenuWidget, RemoteTrackQualityMenuWidget, _InvocationRow, _ResultPanel (+5 more)
 
-### Community 107 - "src/e2ee/events.dart"
-Cohesion: 0.29
-Nodes (6): ../../livekit_client.dart, E2EEState, participant, publication, state, toString
-
-### Community 108 - "package:flutter/material.dart"
-Cohesion: 0.12
-Nodes (15): build, ctrl, label, LKTextField, GlobalKey, key, pixelDensity, VideoTrackViewRegistration (+7 more)
-
-### Community 109 - "lib/src/core/engine.dart"
+### Community 109 - "engine.dart"
 Cohesion: 0.02
-Nodes (93): addTrack, asDataPacket, asEncryptablePacket, _attemptingReconnect, attemptReconnect, _buildRtcConfiguration, candidatePairs, candidates (+85 more)
+Nodes (82): asDataPacket, asEncryptablePacket, _attemptingReconnect, _buildRtcConfiguration, candidatePairs, candidates, cleanUp, _clearPendingReconnect (+74 more)
 
-### Community 110 - "package:web/web.dart"
-Cohesion: 0.09
-Nodes (21): handleMethodCall, LiveKitWebPlugin, registerWith, handleMethodCall, LiveKitWebPlugin, registerWith, package:flutter/services.dart, package:flutter_web_plugins/flutter_web_plugins.dart (+13 more)
+### Community 110 - "audio_session_test.dart"
+Cohesion: 0.10
+Nodes (6): handleMethodCall, LiveKitWebPlugin, registerWith, main, resolveAndroidPolicy, resolveApplePolicy
 
-### Community 111 - "lib/src/core/room.dart"
+### Community 111 - "core/room.dart"
 Cohesion: 0.02
-Nodes (84): ../e2ee/e2ee_manager.dart, E2EEManager? get, ../hardware/hardware.dart, activeSpeakers, _applyRoomUpdate, _audioEnabled, _byteStreamControllers, _byteStreamHandlers (+76 more)
-
-### Community 112 - "AudioReceiverStats"
-Cohesion: 0.29
-Nodes (7): AudioReceiverStats, AudioSenderStats, CodecStats, ReceiverStats, SenderStats, VideoReceiverStats, VideoSenderStats
-
-### Community 113 - "src/agent/constants.dart"
-Cohesion: 0.33
-Nodes (5): lkAgentInputsAttributeKey, lkAgentNameAttributeKey, lkAgentOutputsAttributeKey, lkAgentStateAttributeKey, lkPublishOnBehalfAttributeKey
+Nodes (74): activeSpeakers, _applyRoomUpdate, _audioEnabled, _byteStreamControllers, _byteStreamHandlers, _cleanUp, connect, connectionState (+66 more)
 
 ### Community 114 - "e2ee.nalu_utils.dart"
 Cohesion: 0.03
 Nodes (65): AUD, AUD_NUT, BLA_N_LP, BLA_W_LP, BLA_W_RADL, CRA_NUT, detectCodecFromNALUs, detectedCodec (+57 more)
 
-### Community 115 - "State"
-Cohesion: 0.17
-Nodes (16): ConnectPage, _ConnectPageState, PreJoinPage, _PreJoinPageState, RoomPage, ControlsWidget, _ControlsWidgetState, _HandlerCard (+8 more)
-
-### Community 116 - "lib/src/options.dart"
+### Community 116 - "src/options.dart"
 Cohesion: 0.03
-Nodes (62): ClientProtocolVersionExt, DegradationPreferenceExt, ProtocolVersionExt, RoomOptionsEx, adaptiveStream, AudioPublishOptions, autoSubscribe, backupCodecs (+54 more)
+Nodes (58): DegradationPreferenceExt, ProtocolVersionExt, RoomOptionsEx, adaptiveStream, AudioPublishOptions, autoSubscribe, backupCodecs, camera (+50 more)
 
-### Community 117 - "src/track/web/_audio_context.dart"
-Cohesion: 0.40
-Nodes (4): AudioContextState, fromValue, fromValues, value
-
-### Community 118 - "lib/src/agent/session.dart"
-Cohesion: 0.04
-Nodes (56): agent.dart, Agent get, chat/message_receiver.dart, chat/message_sender.dart, _agent, _agentTimeoutTimer, _cancelReceiverSubscriptions, cause (+48 more)
-
-### Community 119 - "@visibleForTesting"
-Cohesion: 0.40
-Nodes (5): @visibleForTesting, resetForTest, hasPending, resetForTest, hasPending
-
-### Community 120 - "Iterable"
-Cohesion: 0.40
-Nodes (5): Iterable, IterableExt, LiveKitEventExt, IterableExt, LiveKitEventExt
+### Community 118 - "session.dart"
+Cohesion: 0.03
+Nodes (45): _agent, _agentTimeoutTimer, _cancelReceiverSubscriptions, cause, connection, connectionState, _options, dismissError (+37 more)
 
 ### Community 121 - "create_version.dart"
 Cohesion: 0.04
-Nodes (54): File, performance,
-  security,
-  deprecated,
-  removed,, _allowedChangeKinds, _allowedChangeLevels, appendToChangelog, bold, buffer, bumpMajor (+46 more)
+Nodes (52): _allowedChangeKinds, _allowedChangeLevels, appendToChangelog, bold, buffer, bumpMajor, bumpMinor, bumpPatch (+44 more)
 
 ### Community 122 - "rpc_test_sheet.dart"
 Cohesion: 0.04
-Nodes (52): _applyPreset, attachRoom, build, _buildHandlersSection, _buildHeader, _buildSendSection, byteLength, callerIdentity (+44 more)
+Nodes (58): RoomPage, _applyPreset, attachRoom, build, _buildHandlersSection, _buildHeader, _buildSendSection, byteLength (+50 more)
 
-### Community 123 - "lib/src/proto/livekit_metrics.pb.dart"
+### Community 123 - "livekit_metrics.pb.dart"
 Cohesion: 0.04
-Nodes (51): clearDuration, clearEndTimestampMs, clearLabel, clearMetadata, clearNormalizedEndTimestamp, clearNormalizedStartTimestamp, clearNormalizedTimestamp, clearParticipantIdentity (+43 more)
+Nodes (47): clearDuration, clearEndTimestampMs, clearLabel, clearMetadata, clearNormalizedEndTimestamp, clearNormalizedStartTimestamp, clearNormalizedTimestamp, clearParticipantIdentity (+39 more)
 
-### Community 124 - "Object"
-Cohesion: 0.67
-Nodes (3): ObjectExt, Object, ObjectExt
+### Community 124 - "assist_gate.dart"
+Cohesion: 0.08
+Nodes (19): _Access, action, AssistGate, _AssistGateState, _authSub, body, build, _check (+11 more)
 
 ### Community 125 - "Bool"
-Cohesion: 0.11
-Nodes (17): AnyHashable, AVAudioEngine, AVAudioNode, RTCAudioDeviceModule, RTCAudioDeviceModuleDelegate, RTCAudioSessionConfiguration, RTCSpeechActivityEvent, LKAudioEngineObserver (+9 more)
+Cohesion: 0.10
+Nodes (6): LKAudioEngineObserver, .isSessionActive, LKAudioEngineObserver, .isSessionActive, LKAudioEngineObserver, .isSessionActive
 
-### Community 126 - "lib/src/track/options.dart"
+### Community 126 - "track/options.dart"
 Cohesion: 0.04
-Nodes (49): AudioCaptureOptions, AudioOutputOptions, AudioProcessingFailureReason, _audioProcessingMessageOrDefault, autoGainControl, autoGainControlMode, CameraCaptureOptions, CameraExposureMode (+41 more)
+Nodes (48): AudioCaptureOptions, AudioOutputOptions, AudioProcessingFailureReason, _audioProcessingMessageOrDefault, autoGainControl, autoGainControlMode, CameraCaptureOptions, CameraExposureMode (+40 more)
 
 ### Community 127 - "peerconnection_mock.dart"
 Cohesion: 0.04
-Nodes (48): datachannel_mock.dart, RTCIceConnectionState, RTCIceConnectionState get, RTCIceGatheringState, RTCIceGatheringState get, RTCPeerConnectionState, RTCPeerConnectionState get, RTCSessionDescription? (+40 more)
+Nodes (40): addCandidate, addStream, addTrack, addTransceiver, _answerType, close, closed, _connectionState (+32 more)
 
-### Community 128 - "lib/src/utils.dart"
+### Community 128 - "src/utils.dart"
 Cohesion: 0.04
 Nodes (48): buildStreamId, buildUri, _clampSimulcastPreset, _clientInfo, codec, compareVersions, _computeDefaultScreenShareSimulcastParams, _computeDefaultSimulcastParams (+40 more)
 
-### Community 129 - "lib/src/publication/track_publication.dart"
-Cohesion: 0.07
-Nodes (26): ../core/signal_client.dart, PBTrackTypeExt, TrackInfo, _attachTrackListener, dimensions, hashCode, isScreenShare, kind (+18 more)
-
-### Community 130 - "VideoQuality?"
-Cohesion: 0.67
-Nodes (3): PBVideoQualityExt, PBVideoQualityExt, VideoQuality?
+### Community 129 - "track_publication.dart"
+Cohesion: 0.08
+Nodes (22): TrackInfo, _attachTrackListener, dimensions, hashCode, isScreenShare, kind, latestInfo, _metadataMuted (+14 more)
 
 ### Community 131 - "widgets/participant.dart"
-Cohesion: 0.05
-Nodes (47): abstract final bool, abstract final ParticipantTrackType, AudioTrack? get, LiveKitExampleApp, NoVideoWidget, activeAudioTrack, activeVideoTrack, audioPublication (+39 more)
+Cohesion: 0.06
+Nodes (29): activeAudioTrack, activeVideoTrack, audioPublication, build, createState, didUpdateWidget, dispose, extraWidgets (+21 more)
 
-### Community 132 - "lib/src/stats/stats.dart"
+### Community 132 - "stats.dart"
 Cohesion: 0.04
 Nodes (47): audioSourceStats, bytesNow, bytesPrev, bytesReceived, bytesSent, channels, clockRate, computeBitrateForReceiverStats (+39 more)
 
-### Community 133 - "lib/src/participant/participant.dart"
+### Community 133 - "participant/participant.dart"
 Cohesion: 0.04
-Nodes (46): ClientProtocolVersion get, ConnectionQuality get, addTrackPublication, attributes, audioLevel, audioTrackPublications, clientProtocol, _connectionQuality (+38 more)
+Nodes (43): addTrackPublication, attributes, audioLevel, audioTrackPublications, clientProtocol, _connectionQuality, getTrackPublicationByName, getTrackPublicationBySid (+35 more)
 
-### Community 134 - "lib/src/core/signal_client.dart"
-Cohesion: 0.04
-Nodes (46): ConnectionState get, _canQueue, cleanUp, _clearPingInterval, _clearPingTimeout, clearQueue, connect, _connectionState (+38 more)
+### Community 134 - "@internal"
+Cohesion: 0.03
+Nodes (86): addTrack, attemptReconnect, createSimulcastTransceiverSender, createTransceiverRTCRtpSender, dataChannelInfo, ensurePublisherConnected, handleReconnect, negotiate (+78 more)
 
 ### Community 135 - "remote_track_publication_test.dart"
-Cohesion: 0.04
-Nodes (46): rtc.MediaStream, rtc.MediaStreamTrack, _FakeMediaStream, _FakeMediaStreamTrack, active, adaptRes, addTrack, applyConstraints (+38 more)
-
-### Community 136 - "lib/src/types/data_stream.dart"
-Cohesion: 0.04
-Nodes (44): create,
-  update,
-  delete,, attachedFiles, attachedStreamIds, attachments, attributes, ByteStreamHandler, ChatMessage, close (+36 more)
-
-### Community 137 - "lib/src/track/audio_visualizer_web.dart"
 Cohesion: 0.05
-Nodes (42): dart:math, build, analyserOptions, _audioAnalyser, _audioTrack, centerBands, createVisualizerImpl, db (+34 more)
+Nodes (41): ParticipantConnectedEvent, active, adaptRes, addTrack, applyConstraints, captureFrame, _CapturingConnector, clone (+33 more)
+
+### Community 136 - "data_stream.dart"
+Cohesion: 0.04
+Nodes (43): attachedFiles, attachedStreamIds, attachments, attributes, ByteStreamHandler, ChatMessage, close, destinationIdentities (+35 more)
+
+### Community 137 - "audio_visualizer_web.dart"
+Cohesion: 0.05
+Nodes (38): AudioVisualizerOptions, barCount, centeredBands, createVisualizer, _audioTrack, createVisualizerImpl, _eventChannel, mediaStreamTrack (+30 more)
 
 ### Community 138 - "e2ee.keyhandler.dart"
 Cohesion: 0.05
-Nodes (42): CryptoKey, e2ee.utils.dart, cryptoKeyRing, currentKeyIndex, decryptionFailure, _decryptionFailureCount, decryptionSuccess, deriveKeys (+34 more)
+Nodes (40): cryptoKeyRing, currentKeyIndex, decryptionFailure, _decryptionFailureCount, decryptionSuccess, deriveKeys, discardFrameWhenCryptorNotReady, encryptionKey (+32 more)
 
 ### Community 139 - "lib/src/events.dart"
 Cohesion: 0.05
-Nodes (42): DisconnectReason, activeRecording, attempt, attributes, bitrateForLayers, bufferedSize, connectionQuality, currentBitrate (+34 more)
+Nodes (38): activeRecording, attempt, attributes, bitrateForLayers, bufferedSize, connectionQuality, currentBitrate, data (+30 more)
 
 ### Community 140 - "connect.dart"
-Cohesion: 0.05
-Nodes (42): DropdownMenuItem, _adaptiveStream, build, _busy, _checkPermissions, _connect, _connectOnWeb, createState (+34 more)
+Cohesion: 0.04
+Nodes (40): _adaptiveStream, build, _busy, _checkPermissions, _connect, _connectOnWeb, ConnectPage, _ConnectPageState (+32 more)
 
 ### Community 141 - "Visualizer"
-Cohesion: 0.13
-Nodes (15): AudioVisualizeProcessor, Any, AudioTrack, AVAudioPCMBuffer, Bool, Float, FlutterBinaryMessenger, FlutterError (+7 more)
+Cohesion: 0.12
+Nodes (3): Visualizer, Visualizer, Visualizer
 
 ### Community 142 - "_"
 Cohesion: 0.05
-Nodes (42): ReliabilityExt, RTCIceTransportPolicyExt, _, allowedTrackSids, allTracksAllowed, auto, CancelListenFunc, compareTo (+34 more)
+Nodes (41): ReliabilityExt, RTCIceTransportPolicyExt, _, allowedTrackSids, allTracksAllowed, auto, CancelListenFunc, compareTo (+33 more)
 
 ### Community 143 - "e2ee.data_packet_cryptor.dart"
-Cohesion: 0.05
-Nodes (39): DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope get, e2ee.data_packet_cryptor.dart, e2ee.frame_cryptor.dart, e2ee.keyhandler.dart, e2ee.logger.dart, KeyOptions get, package:webrtc_interface/webrtc_interface.dart (+31 more)
+Cohesion: 0.09
+Nodes (20): currentKeyIndex, data, dataCryptorId, decrypt, E2EEDataPacketCryptor, encrypt, EncryptedPacket, iv (+12 more)
 
 ### Community 144 - "prejoin.dart"
-Cohesion: 0.05
-Nodes (40): _actionBack, adaptiveStream, args, _audioInputs, _audioTrack, build, _busy, _changeLocalAudioTrack (+32 more)
+Cohesion: 0.04
+Nodes (43): _actionBack, adaptiveStream, args, _audioInputs, _audioTrack, build, _busy, _changeLocalAudioTrack (+35 more)
 
-### Community 145 - "lib/src/agent/chat/transcription_stream_receiver.dart"
-Cohesion: 0.05
-Nodes (38): dispose, MessageReceiver, messages, MessageSender, send, TextMessageSender, append, _AttributeKeys (+30 more)
+### Community 145 - "transcription_stream_receiver.dart"
+Cohesion: 0.04
+Nodes (44): dispose, MessageReceiver, messages, MessageSender, send, _controller, dispose, messages (+36 more)
 
-### Community 146 - "lib/src/participant/local.dart"
+### Community 146 - "participant/local.dart"
 Cohesion: 0.05
-Nodes (40): _allParticipantsAllowed, audioTrackPublications, _broadcastStateChanged, createFromInfo, getTrackPublicationByName, getTrackPublicationBySid, getTrackPublicationBySource, handleSignalRequestResponse (+32 more)
+Nodes (36): _allParticipantsAllowed, audioTrackPublications, _broadcastStateChanged, createFromInfo, getTrackPublicationByName, getTrackPublicationBySid, getTrackPublicationBySource, handleSignalRequestResponse (+28 more)
 
-### Community 147 - "lib/src/types/video_parameters.dart"
+### Community 147 - "video_parameters.dart"
 Cohesion: 0.05
-Nodes (40): all169, all43, allScreenShare, compareTo, defaultSimulcast169, defaultSimulcast43, description, dimensions (+32 more)
+Nodes (37): all169, all43, allScreenShare, compareTo, defaultSimulcast169, defaultSimulcast43, description, dimensions (+29 more)
 
-### Community 148 - "NSObject"
-Cohesion: 0.13
-Nodes (18): AudioConverter, FlutterStreamHandler, NSObject, RTCAudioRenderer, AudioRenderer, AVAudioPCMBuffer, Any, AudioTrack (+10 more)
+### Community 148 - "AudioRenderer"
+Cohesion: 0.12
+Nodes (6): AudioRenderer, AVAudioPCMBuffer, AudioRenderer, AVAudioPCMBuffer, AudioRenderer, AVAudioPCMBuffer
 
 ### Community 149 - "e2ee.frame_cryptor.dart"
 Cohesion: 0.05
-Nodes (37): e2ee.nalu_utils.dart, e2ee.sfi_guard.dart, buffer, codec, CryptorError, currentKeyIndex, decodeFunction, _enabled (+29 more)
+Nodes (35): buffer, codec, CryptorError, currentKeyIndex, decodeFunction, _enabled, encodeFunction, enqueueFrame (+27 more)
 
-### Community 150 - "lib/src/publication/remote.dart"
-Cohesion: 0.05
-Nodes (37): UpdateTrackSettings, _adaptiveStreamActive, _adaptiveStreamDimensions, _adaptiveStreamVisible, _buildTrackSettings, _cancelPendingTrackSettingsUpdateRequest, _computeVideoViewVisibility, disable (+29 more)
+### Community 150 - "publication/remote.dart"
+Cohesion: 0.04
+Nodes (44): UpdateTrackSettings, _adaptiveStreamActive, _adaptiveStreamDimensions, _adaptiveStreamVisible, _buildTrackSettings, _cancelPendingTrackSettingsUpdateRequest, _computeVideoViewVisibility, disable (+36 more)
 
 ### Community 151 - "lib/src/types/rpc.dart"
 Cohesion: 0.05
-Nodes (37): applicationError, builtIn, callerIdentity, code, connectionTimeout, data, destinationIdentity, errorMessages (+29 more)
+Nodes (36): applicationError, builtIn, callerIdentity, code, connectionTimeout, data, destinationIdentity, errorMessages (+28 more)
 
-### Community 152 - "lib/src/audio/audio_manager.dart"
+### Community 152 - "audio_manager.dart"
 Cohesion: 0.05
-Nodes (36): android_audio_session_adapter.dart, audio_session_policy.dart, AudioSessionManagementMode get, _applyCurrentAudioSessionPolicy, applyOptionsForConnect, AudioEngineState, _audioEngineStateController, audioEngineStateStream (+28 more)
+Nodes (35): _applyCurrentAudioSessionPolicy, applyOptionsForConnect, AudioEngineState, _audioEngineStateController, audioEngineStateStream, AudioManager, canSwitchSpeakerphone, _configureAndroidAudioSession (+27 more)
 
 ### Community 153 - "controls.dart"
 Cohesion: 0.05
-Nodes (36): _audioInputs, _audioOutputs, build, createState, _disableAudio, _disableScreenShare, _disableVideo, dispose (+28 more)
+Nodes (35): _audioInputs, _audioOutputs, build, ControlsWidget, _ControlsWidgetState, createState, _disableAudio, _disableScreenShare (+27 more)
 
 ### Community 154 - "Float"
-Cohesion: 0.10
-Nodes (19): AudioLevel, AudioVisualizeProcessor, AVAudioPCMBuffer, RTCAudioBuffer, Sequence, AVAudioPCMBuffer, FFTProcessor, Float (+11 more)
+Cohesion: 0.09
+Nodes (15): AudioLevel, AudioVisualizeProcessor, AVAudioPCMBuffer, RTCAudioBuffer, Sequence, AudioLevel, AudioVisualizeProcessor, AVAudioPCMBuffer (+7 more)
 
 ### Community 155 - "math_extras.h"
-Cohesion: 0.08
-Nodes (17): LimitType, ClampTo(), ClampToDirectComparison(), ClampToHelper, ClampToHelper<int64_t, uint64_t>, ClampToHelper<int64_t, ValueType>, ClampToHelper<uint64_t, ValueType>, ClampToNonLongLongHelper (+9 more)
+Cohesion: 0.07
+Nodes (14): ClampTo(), ClampToDirectComparison(), ClampToHelper, ClampToHelper<int64_t, uint64_t>, ClampToHelper<int64_t, ValueType>, ClampToHelper<uint64_t, ValueType>, ClampToNonLongLongHelper, ClampToNonLongLongHelper<false, LimitType, ValueType> (+6 more)
 
 ### Community 156 - "LiveKitPlugin"
-Cohesion: 0.14
-Nodes (14): FlutterPlugin, LiveKitPlugin, AudioProcessingComponentOptions, AudioProcessingOptionsResult, AudioProcessors, AudioProcessingComponentState, AudioProcessingImplementation, AudioProcessingState (+6 more)
+Cohesion: 0.10
+Nodes (5): LiveKitPlugin, AudioProcessingComponentState, AudioProcessingState, AudioProcessingMode, AudioProcessingOptions
 
 ### Community 157 - "Foundation"
-Cohesion: 0.16
-Nodes (12): AVFoundation, Cocoa, Combine, Flutter, flutter_webrtc, FlutterMacOS, Foundation, AudioTrack (+4 more)
+Cohesion: 0.15
+Nodes (10): Accelerate, AVFoundation, Cocoa, Combine, Flutter, flutter_webrtc, FlutterMacOS, Foundation (+2 more)
 
-### Community 158 - "lib/src/token_source/jwt.dart"
-Cohesion: 0.06
-Nodes (35): DateTime? get, attributes, canPublish, canPublishData, canPublishSources, canSubscribe, _claims, _dateTimeFor (+27 more)
+### Community 158 - "jwt.dart"
+Cohesion: 0.05
+Nodes (34): attributes, canPublish, canPublishData, canPublishSources, canSubscribe, _claims, _dateTimeFor, dispatchesAgent (+26 more)
 
-### Community 159 - "lib/src/widgets/video_track_renderer.dart"
-Cohesion: 0.06
-Nodes (35): adaptiveStreamPixelDensity, _aspectRatio, _attach, autoCenter, autoDisposeRenderer, build, cachedRenderer, createState (+27 more)
+### Community 159 - "video_track_renderer.dart"
+Cohesion: 0.05
+Nodes (33): adaptiveStreamPixelDensity, _aspectRatio, _attach, autoCenter, autoDisposeRenderer, build, cachedRenderer, createState (+25 more)
 
 ### Community 160 - "room_e2e_test.dart"
-Cohesion: 0.06
-Nodes (35): signal_client_test.dart, StreamTrackCallback?, active, adaptRes, addTrack, applyConstraints, captureFrame, clone (+27 more)
+Cohesion: 0.05
+Nodes (37): active, adaptRes, addTrack, applyConstraints, captureFrame, clone, container, dispose (+29 more)
 
-### Community 161 - "lib/src/types/video_dimensions.dart"
+### Community 161 - "video_dimensions.dart"
 Cohesion: 0.06
-Nodes (33): area, aspect, aspect169, aspect43, copyWith, h1080_169, h1080_43, h120_43 (+25 more)
+Nodes (30): area, aspect, aspect169, aspect43, copyWith, h1080_169, h1080_43, h120_43 (+22 more)
 
 ### Community 162 - "token_source.dart"
-Cohesion: 0.07
-Nodes (31): @JsonSerializable, AgentAttributes, TranscriptionAttributes, TokenStoreItem, LiveKitVideoGrant, TokenSourceJwt, agentDeployment, agentMetadata (+23 more)
+Cohesion: 0.08
+Nodes (26): AgentAttributes, TranscriptionAttributes, TokenStoreItem, LiveKitVideoGrant, TokenSourceJwt, RoomAgentDispatch, RoomConfiguration, agentDeployment (+18 more)
 
-### Community 163 - "caching_token_source_test.dart"
-Cohesion: 0.07
-Nodes (29): int? exp,
-  bool, TokenSourceHttpException, package:dart_jsonwebtoken/dart_jsonwebtoken.dart, package:http/http.dart, package:http/testing.dart, package:livekit_client/src/token_source/caching.dart, package:livekit_client/src/token_source/custom.dart, package:livekit_client/src/token_source/endpoint.dart (+21 more)
+### Community 163 - "token_source_test.dart"
+Cohesion: 0.11
+Nodes (7): main, _generateToken, includeExp, jwt, main, payload, sign
 
-### Community 164 - "String"
-Cohesion: 0.16
-Nodes (6): RTCAudioProcessingComponentState, RTCAudioProcessingImplementation, RTCAudioProcessingMode, RTCAudioProcessingState, String, LiveKitPlugin
-
-### Community 165 - "lib/src/e2ee/e2ee_manager.dart"
-Cohesion: 0.07
-Nodes (30): DataPacketCryptor?, RPCMethods, _addRtpReceiver, _addRtpSender, _algorithm, _cleanUp, _dataPacketCryptor, E2EEManager (+22 more)
-
-### Community 166 - "$1"
+### Community 165 - "e2ee_manager.dart"
 Cohesion: 0.09
-Nodes (30): $1(), a4(), a5(), a7(), aV(), aW(), b5(), b6() (+22 more)
+Nodes (20): _addRtpReceiver, _addRtpSender, _algorithm, _cleanUp, _dataPacketCryptor, _e2eeStateFromFrameCryptoState, _enabled, encryptData (+12 more)
 
-### Community 167 - "h"
-Cohesion: 0.13
-Nodes (31): a1(), ac(), aH(), aK(), aM(), aN(), aQ(), as() (+23 more)
+### Community 168 - "transport.dart"
+Cohesion: 0.06
+Nodes (28): addIceCandidate, _bitrateTrackers, _cancelDebounce, cid, codec, connectOptions, create, createAndSendOffer (+20 more)
 
-### Community 168 - "lib/src/core/transport.dart"
-Cohesion: 0.07
-Nodes (29): Function?, addIceCandidate, _bitrateTrackers, _cancelDebounce, cid, codec, connectOptions, create (+21 more)
-
-### Community 169 - "lib/src/track/track.dart"
-Cohesion: 0.07
-Nodes (29): _active, _cid, disable, enable, getCid, isActive, kind, mediaStream (+21 more)
+### Community 169 - "track.dart"
+Cohesion: 0.04
+Nodes (46): clear, emitException, enqueue, expiresAt, flush, maxSize, participantSid, _pending (+38 more)
 
 ### Community 170 - "check_version.dart"
 Cohesion: 0.07
-Nodes (29): package:yaml/yaml.dart, bold, checkVersionConsistency, checkWebRtcSdkVersions, _Color, content, doc, extractVersionFromPubspec (+21 more)
+Nodes (27): bold, checkVersionConsistency, checkWebRtcSdkVersions, _Color, content, doc, extractVersionFromPubspec, filesToCheck (+19 more)
 
 ### Community 171 - "pages/room.dart"
-Cohesion: 0.08
-Nodes (28): _askPublish, build, createState, disableInCallFlags, dispose, _disposeRoomAsync, enableInCallFlags, fastConnection (+20 more)
+Cohesion: 0.07
+Nodes (33): _askPublish, build, createState, disableInCallFlags, dispose, _disposeRoomAsync, enableInCallFlags, fastConnection (+25 more)
 
 ### Community 172 - "RoomEvent"
-Cohesion: 0.13
-Nodes (29): ActiveSpeakersChangedEvent, DataReceivedEvent, ParticipantAttributesChanged, ParticipantConnectedEvent, ParticipantConnectionQualityUpdatedEvent, ParticipantDisconnectedEvent, ParticipantEvent, ParticipantMetadataUpdatedEvent (+21 more)
+Cohesion: 0.10
+Nodes (34): E2EEState, participant, publication, state, toString, TrackE2EEStateEvent, ActiveSpeakersChangedEvent, DataReceivedEvent (+26 more)
 
-### Community 173 - "lib/src/track/local/video.dart"
+### Community 173 - "local/video.dart"
 Cohesion: 0.07
-Nodes (28): addSimulcastTrack, _bitrateFoLayers, codec, createCameraTrack, createScreenShareTrack, createScreenShareTracksWithAudio, _currentBitrate, currentOptions (+20 more)
+Nodes (26): addSimulcastTrack, _bitrateFoLayers, codec, createCameraTrack, createScreenShareTrack, createScreenShareTracksWithAudio, _currentBitrate, currentOptions (+18 more)
 
-### Community 174 - "FlutterResult"
-Cohesion: 0.16
-Nodes (8): AVAudioSession, FlutterMethodCall, FlutterPlugin, FlutterResult, LKAudioEngineObserver, RTCAudioProcessingOptionsResultCode, LiveKitPlugin, FlutterBinaryMessenger
-
-### Community 175 - "lib/src/e2ee/key_provider.dart"
+### Community 175 - "key_provider.dart"
 Cohesion: 0.07
-Nodes (27): KeyProviderOptions, create, defaultDiscardFrameWhenCryptorNotReady, defaultFailureTolerance, defaultKeyRingSize, defaultMagicBytes, defaultRatchetSalt, defaultRatchetWindowSize (+19 more)
+Nodes (25): create, defaultDiscardFrameWhenCryptorNotReady, defaultFailureTolerance, defaultKeyRingSize, defaultMagicBytes, defaultRatchetSalt, defaultRatchetWindowSize, exportKey (+17 more)
 
-### Community 176 - "lib/src/participant/remote.dart"
+### Community 176 - "participant/remote.dart"
 Cohesion: 0.08
-Nodes (27): addSubscribedMediaTrack, _addTracks, audioTrackPublications, createFromInfo, getTrackPublicationByName, getTrackPublicationBySid, getTrackPublicationBySource, newPublications (+19 more)
+Nodes (18): addSubscribedMediaTrack, _addTracks, audioTrackPublications, createFromInfo, getTrackPublicationByName, getTrackPublicationBySid, getTrackPublicationBySource, newPublications (+10 more)
 
 ### Community 177 - "e2ee_fake_manager.dart"
 Cohesion: 0.07
-Nodes (27): rtc.KeyProvider, _dcEncryptionEnabled, decryptedPayloads, dispose, _enabled, encryptData, encryptedPayloads, exportKey (+19 more)
+Nodes (26): _dcEncryptionEnabled, decryptedPayloads, dispose, _enabled, encryptData, encryptedPayloads, exportKey, exportSharedKey (+18 more)
 
 ### Community 178 - "create_change.dart"
 Cohesion: 0.07
 Nodes (27): _bold, changesDir, content, _cyan, description, _dim, _esc, file (+19 more)
 
 ### Community 179 - "AudioVisualizer"
-Cohesion: 0.09
-Nodes (25): Algorithm, AudioVisualizer, bands_, bands_count_, fft_processor_, is_centered_, kDefaultBandsCount, kDefaultMaxDb (+17 more)
+Cohesion: 0.11
+Nodes (16): AudioVisualizer, bands_, bands_count_, fft_processor_, is_centered_, kDefaultBandsCount, kDefaultMaxDb, kDefaultMaxFrequency (+8 more)
 
-### Community 180 - "data_stream_reliability_test.dart"
-Cohesion: 0.09
-Nodes (22): ../core/signal_client_test.dart, ../mock/e2e_container.dart, ../mock/e2ee_fake_manager.dart, ../mock/peerconnection_mock.dart, package:livekit_client/livekit_client.dart, package:livekit_client/src/data_stream/errors.dart, package:livekit_client/src/internal/events.dart, container (+14 more)
-
-### Community 181 - "lib/src/hardware/hardware.dart"
-Cohesion: 0.07
-Nodes (26): audioInputs, audioOutputs, canSwitchSpeakerphone, deviceId, enumerateDevices, forceSpeakerOutput, groupId, Hardware (+18 more)
-
-### Community 182 - "lib/src/utils/data_packet_buffer.dart"
-Cohesion: 0.07
-Nodes (26): DataPacket, alignBufferedAmount, _buffer, BufferedDataPacket, clear, countUtilization, DataPacketBuffer, _enforceBufferLimits (+18 more)
-
-### Community 183 - "lib/src/widgets/screen_select_dialog.dart"
+### Community 180 - "Room"
 Cohesion: 0.08
-Nodes (26): build, _cancel, cancelText, createState, deactivate, _getSources, initState, _name (+18 more)
+Nodes (21): DataStreamRoomMethods, RoomPreConnect, RoomDebugMethods, RoomHardwareManagementMethods, RoomPrivateMethods, RoomRPCMethods, container, main (+13 more)
+
+### Community 181 - "hardware.dart"
+Cohesion: 0.07
+Nodes (29): setSpeakerOn, audioInputs, audioOutputs, canSwitchSpeakerphone, deviceId, enumerateDevices, forceSpeakerOutput, groupId (+21 more)
+
+### Community 182 - "data_packet_buffer.dart"
+Cohesion: 0.07
+Nodes (25): DataPacket, alignBufferedAmount, _buffer, BufferedDataPacket, clear, countUtilization, DataPacketBuffer, _enforceBufferLimits (+17 more)
+
+### Community 183 - "screen_select_dialog.dart"
+Cohesion: 0.07
+Nodes (25): build, _cancel, cancelText, createState, deactivate, _getSources, initState, _name (+17 more)
 
 ### Community 184 - "Usage"
 Cohesion: 0.07
@@ -1092,335 +774,243 @@ Nodes (26): Advanced track manipulation, Android, Android, Audio handling, Audio
 
 ### Community 185 - "_"
 Cohesion: 0.08
-Nodes (26): _, android, AndroidAudioAttributesContentType, AndroidAudioAttributesUsageType, AndroidAudioFocusMode, AndroidAudioMode, AndroidAudioStreamType, apple (+18 more)
-
-### Community 186 - "Any"
-Cohesion: 0.18
-Nodes (3): RTCAudioProcessingOptions, Any, LiveKitPlugin
+Nodes (23): _, android, AndroidAudioAttributesContentType, AndroidAudioAttributesUsageType, AndroidAudioFocusMode, AndroidAudioMode, AndroidAudioStreamType, apple (+15 more)
 
 ### Community 187 - "sound_waveform.dart"
 Cohesion: 0.09
-Nodes (24): AnimationController, AudioVisualizer, audioTrack, barCount, build, controller, createState, dispose (+16 more)
-
-### Community 188 - ".$1"
-Cohesion: 0.10
-Nodes (21): A(), ay(), bs(), e(), f_(), fP(), fs(), fw() (+13 more)
+Nodes (21): audioTrack, barCount, build, controller, createState, dispose, durationInMilliseconds, initState (+13 more)
 
 ### Community 189 - "_"
 Cohesion: 0.08
-Nodes (25): _, AGENTS_LLM_TTFT, AGENTS_STT_TTFT, AGENTS_TTS_TTFB, CLIENT_AUDIO_SUBSCRIBER_CONCEALED_SAMPLES, CLIENT_AUDIO_SUBSCRIBER_CONCEALMENT_EVENTS, CLIENT_AUDIO_SUBSCRIBER_INTERRUPTION_COUNT, CLIENT_AUDIO_SUBSCRIBER_SILENT_CONCEALED_SAMPLES (+17 more)
+Nodes (24): _, AGENTS_LLM_TTFT, AGENTS_STT_TTFT, AGENTS_TTS_TTFB, CLIENT_AUDIO_SUBSCRIBER_CONCEALED_SAMPLES, CLIENT_AUDIO_SUBSCRIBER_CONCEALMENT_EVENTS, CLIENT_AUDIO_SUBSCRIBER_INTERRUPTION_COUNT, CLIENT_AUDIO_SUBSCRIBER_SILENT_CONCEALED_SAMPLES (+16 more)
 
 ### Community 190 - "DarwinNotification"
 Cohesion: 0.12
-Nodes (14): AnyPublisher, CFNotificationCallback, DarwinNotificationCenter, CFNotificationCenter, BroadcastManager, Bool, DarwinNotification, broadcastRequestStop (+6 more)
+Nodes (8): DarwinNotificationCenter, BroadcastManager, DarwinNotification, broadcastRequestStop, broadcastStarted, broadcastStopped, Publisher, SubscriptionBase
 
-### Community 191 - "lib/src/token_source/caching.dart"
+### Community 191 - "caching.dart"
+Cohesion: 0.07
+Nodes (26): _cached, cachedResponse, CachedTokenSource, CachingTokenSource, clear, _defaultValidator, fetch, fromJson (+18 more)
+
+### Community 192 - "region_url_provider.dart"
 Cohesion: 0.09
-Nodes (23): jwt.dart, _cached, cachedResponse, CachedTokenSource, CachingTokenSource, clear, _defaultValidator, fetch (+15 more)
-
-### Community 192 - "lib/src/support/region_url_provider.dart"
-Cohesion: 0.08
-Nodes (23): RegionSettings, attemptedRegions, fetchRegionSettings, fromJson, getCloudConfigUrl, getNextBestRegionUrl, getServerUrl, isCloud (+15 more)
-
-### Community 193 - "String? get"
-Cohesion: 0.09
-Nodes (22): destroy, init, kind, name, onPublish, onUnpublish, processedTrack, restart (+14 more)
+Nodes (21): RegionSettings, attemptedRegions, fetchRegionSettings, fromJson, getCloudConfigUrl, getNextBestRegionUrl, getServerUrl, isCloud (+13 more)
 
 ### Community 194 - "e2e_container.dart"
 Cohesion: 0.08
-Nodes (23): package:livekit_client/src/core/engine.dart, peerconnection_mock.dart, test_data.dart, _buildJoinResponse, capturedDataPackets, client, connectRoom, deliverInboundDataPacket (+15 more)
+Nodes (19): _buildJoinResponse, capturedDataPackets, client, connectRoom, deliverInboundDataPacket, dispose, engine, _installOutboundCapture (+11 more)
 
-### Community 195 - "lib/src/core/participant_collection.dart"
-Cohesion: 0.10
-Nodes (21): dart:collection, IterableBase, Iterator, _byIdentity, _bySid, clear, containsIdentity, containsSid (+13 more)
-
-### Community 196 - "SocketConnection"
-Cohesion: 0.13
-Nodes (12): SocketConnection, Bool, DispatchQueue, Error, Stream, String, InputStream, Int32 (+4 more)
-
-### Community 197 - "K"
+### Community 195 - "participant_collection.dart"
 Cohesion: 0.14
-Nodes (23): a6(), a9(), aa(), aP(), at(), au(), az(), b2() (+15 more)
+Nodes (8): _byIdentity, _bySid, clear, containsIdentity, containsSid, iterator, ParticipantCollection, removeByIdentity
 
-### Community 198 - "LKAudioSwitchManager"
-Cohesion: 0.22
-Nodes (10): AbstractAudioSwitch, audioModeForName(), contentTypeForName(), focusModeForName(), LKAudioSwitchManager, SessionConfig, SpeakerRouting, streamTypeForName() (+2 more)
-
-### Community 199 - "package:flutter_test/flutter_test.dart"
-Cohesion: 0.10
-Nodes (16): AssertionError, package:flutter_test/flutter_test.dart, package:livekit_client/src/publication/track_settings.dart, package:livekit_client/src/support/byte_ring_buffer.dart, package:livekit_client/src/support/serial_runner.dart, package:livekit_client/src/types/other.dart, package:livekit_client/src/types/video_dimensions.dart, package:livekit_client/src/utils.dart (+8 more)
-
-### Community 200 - "c"
-Cohesion: 0.13
-Nodes (22): a3(), aD(), aL(), ao(), aX(), bo(), c(), d() (+14 more)
+### Community 198 - "LKAudioSwitchManager.kt"
+Cohesion: 0.06
+Nodes (17): audioModeForName(), contentTypeForName(), focusModeForName(), LKAudioSwitchManager, SessionConfig, SpeakerRouting, streamTypeForName(), usageTypeForName() (+9 more)
 
 ### Community 201 - "signal_client_test.dart"
 Cohesion: 0.09
-Nodes (21): SignalResponse, ../mock/test_data.dart, ../mock/websocket_mock.dart, package:livekit_client/src/core/signal_client.dart, package:livekit_client/src/proto/livekit_rtc.pb.dart, activeSpeakerResponse, client, connectionQualityResponse (+13 more)
+Nodes (17): SignalResponse, activeSpeakerResponse, client, connectionQualityResponse, connectOptions, connector, exampleUri, joinResponse (+9 more)
 
 ### Community 202 - "AVAudioFormat"
-Cohesion: 0.23
-Nodes (9): AVAudioConverter, AVAudioFrameCount, AVFAudio, Sendable, AudioConverter, AVAudioFormat, AVAudioPCMBuffer, AudioConverter (+1 more)
+Cohesion: 0.20
+Nodes (4): AVFAudio, AudioConverter, AudioConverter, AudioConverter
 
-### Community 203 - "lib/src/support/disposable.dart"
-Cohesion: 0.10
-Nodes (19): Session, Transport, addListener, Disposable, DisposableChangeNotifier, _dispose, disposeFuncCount, _disposeFuncs (+11 more)
+### Community 203 - "InternalEvent"
+Cohesion: 0.12
+Nodes (47): Session, Engine, Room, EngineEvent, InternalEvent, LiveKitEvent, TrackEvent, AudioPlaybackFailed (+39 more)
 
-### Community 204 - "lib/src/audio/audio_processing_state.dart"
-Cohesion: 0.10
-Nodes (20): AudioProcessingComponentRequest, autoGainControl, echoCancellation, effective, enabled, fromMap, fromValue, hasAudioProcessingModule (+12 more)
-
-### Community 205 - "lib/src/core/pending_track_queue.dart"
-Cohesion: 0.10
-Nodes (20): clear, emitException, enqueue, expiresAt, flush, maxSize, participantSid, _pending (+12 more)
+### Community 204 - "audio_processing_state.dart"
+Cohesion: 0.09
+Nodes (20): AudioProcessingComponentRequest, AudioProcessingImplementation, autoGainControl, echoCancellation, effective, enabled, fromMap, fromValue (+12 more)
 
 ### Community 206 - "_"
-Cohesion: 0.15
-Nodes (20): _, ConnectException, ConnectionErrorReason, DataPublishException, LiveKitE2EEException, LiveKitException, MediaConnectException, message (+12 more)
+Cohesion: 0.14
+Nodes (18): _, ConnectException, ConnectionErrorReason, DataPublishException, LiveKitE2EEException, LiveKitException, MediaConnectException, message (+10 more)
 
-### Community 207 - "lib/src/rpc/rpc_client_manager.dart"
-Cohesion: 0.10
-Nodes (20): ackTimer, _complete, completer, destinationIdentity, dispose, done, handleIncomingRpcAck, handleIncomingRpcResponse (+12 more)
+### Community 207 - "rpc_client_manager.dart"
+Cohesion: 0.04
+Nodes (42): BackupVideoCodec, backupVideoCodec, mute, participant, toPBTrackPublishedResponse, unmute, ackTimer, _complete (+34 more)
 
 ### Community 208 - "lib/src/support/platform.dart"
 Cohesion: 0.10
-Nodes (20): BrowserType, BrowserVersion, false, isChrome129OrLater, lkBrowser, lkBrowserVersion, lkPlatform, lkPlatformIs (+12 more)
+Nodes (19): BrowserType, BrowserVersion, false, isChrome129OrLater, lkBrowser, lkBrowserVersion, lkPlatform, lkPlatformIs (+11 more)
 
-### Community 209 - "v4sf"
-Cohesion: 0.15
-Nodes (21): cfftf1_ps(), ld_ps1(), passf2_ps(), passf3_ps(), passf4_ps(), passf5_ps(), pffft_cplx_finalize(), pffft_cplx_preprocess() (+13 more)
+### Community 209 - "pffft.c"
+Cohesion: 0.12
+Nodes (32): cfftf1_ps(), ld_ps1(), passf2_ps(), passf3_ps(), passf4_ps(), passf5_ps(), pffft_cplx_finalize(), pffft_cplx_preprocess() (+24 more)
 
 ### Community 210 - "FFTProcessor"
-Cohesion: 0.10
-Nodes (20): atomic_uint, FFTProcessor, complex_data_, fft_size_, imag_data_, input_buffer_, kDefaultFFTSize, kDefaultSmoothingTimeConstant (+12 more)
+Cohesion: 0.08
+Nodes (22): ApplyWindow(), EnsureFinite(), FFTProcessor, complex_data_, fft_size_, imag_data_, input_buffer_, kDefaultFFTSize (+14 more)
 
-### Community 211 - "lib/src/audio/audio_frame_capture.dart"
-Cohesion: 0.10
-Nodes (19): audio_frame_capture_native.dart, AudioFormat, AudioFrame, AudioFrameCallback, AudioFrameCapture, AudioRendererOptions, channels, createAudioFrameCapture (+11 more)
+### Community 211 - "audio_frame_capture.dart"
+Cohesion: 0.12
+Nodes (15): AudioFormat, AudioFrame, AudioFrameCallback, AudioRendererOptions, channels, createAudioFrameCapture, data, format (+7 more)
 
-### Community 212 - "package:logging/logging.dart"
-Cohesion: 0.10
-Nodes (17): disableLogging, getLoggingLevel, logger, LoggerLevel, setLoggingLevel, package:logging/logging.dart, disableLogging, getLoggingLevel (+9 more)
+### Community 212 - "e2ee.logger.dart"
+Cohesion: 0.14
+Nodes (11): disableLogging, getLoggingLevel, logger, LoggerLevel, setLoggingLevel, disableLogging, getLoggingLevel, logger (+3 more)
 
-### Community 213 - "lib/src/managers/event.dart"
-Cohesion: 0.11
-Nodes (19): cancelAll, createListener, emit, emitQueued, emitter, events, EventsEmitter, EventsListenable (+11 more)
+### Community 213 - "package:meta/meta.dart"
+Cohesion: 0.06
+Nodes (27): cancelAll, createListener, emit, emitQueued, emitter, events, EventsEmitter, EventsListenable (+19 more)
 
-### Community 214 - "Accelerate"
-Cohesion: 0.16
-Nodes (7): Accelerate, AVAudioCommonFormat, AVAudioFramePosition, AVAudioPCMBuffer, Double, AVAudioPCMBuffer, AVAudioPCMBuffer
+### Community 214 - "AVAudioPCMBuffer"
+Cohesion: 0.20
+Nodes (3): AVAudioPCMBuffer, AVAudioPCMBuffer, AVAudioPCMBuffer
 
 ### Community 215 - "my_application.cc"
-Cohesion: 0.13
-Nodes (16): main(), my_application_activate(), my_application_class_init(), my_application_dispose(), my_application_init(), my_application_local_command_line(), my_application_new(), _MyApplication (+8 more)
+Cohesion: 0.10
+Nodes (10): main(), my_application_activate(), my_application_class_init(), my_application_dispose(), my_application_init(), my_application_local_command_line(), my_application_new(), _MyApplication (+2 more)
 
-### Community 216 - "audio_frame_capture_test.dart"
-Cohesion: 0.11
-Nodes (18): Frame, package:livekit_client/src/audio/audio_frame_capture.dart, package:livekit_client/src/audio/audio_pcm_utils.dart, _controller, data, emitFrame, float32Bytes, frameStream (+10 more)
-
-### Community 217 - "vDSP_Length"
-Cohesion: 0.21
-Nodes (11): Int, FFTComputeBandsResult, FFTProcessor, FFTResult, Float, .nyquistFrequency, WindowType, hamming (+3 more)
+### Community 216 - "package:flutter_test/flutter_test.dart"
+Cohesion: 0.06
+Nodes (20): _controller, data, emitFrame, float32Bytes, frameStream, int16Bytes, main, readFloat32 (+12 more)
 
 ### Community 218 - "lib/src/track/web/_audio_html.dart"
 Cohesion: 0.11
-Nodes (18): audio, audioContainerId, _audioContext, audioElement, _audioElements, audioPrefix, audioStream, div (+10 more)
+Nodes (17): audio, audioContainerId, _audioContext, audioElement, _audioElements, audioPrefix, audioStream, div (+9 more)
 
 ### Community 219 - "transcription_stream_receiver_test.dart"
-Cohesion: 0.12
-Nodes (17): Fake, DataStream_Chunk, _chunk, controller, _handlers, identity, info, localParticipant (+9 more)
+Cohesion: 0.11
+Nodes (16): DataStream_Chunk, _chunk, controller, _handlers, identity, info, localParticipant, main (+8 more)
 
 ### Community 220 - "lib/src/types/audio_encoding.dart"
 Cohesion: 0.12
 Nodes (17): AudioEncoding, AudioEncodingExt, bitratePriority, copyWith, hashCode, maxBitrate, networkPriority, operator (+9 more)
 
-### Community 221 - "lib/src/types/video_encoding.dart"
+### Community 221 - "video_encoding.dart"
 Cohesion: 0.12
-Nodes (16): Priority, PriorityExt, toRtcpPriorityType, bitratePriority, compareTo, copyWith, hashCode, maxBitrate (+8 more)
-
-### Community 222 - "lib/src/utils/ttl_map.dart"
-Cohesion: 0.11
-Nodes (17): _cleanup, _cleanupTimer, clear, delete, dispose, expiry, has, isExpired (+9 more)
-
-### Community 223 - "SampleUploader"
-Cohesion: 0.19
-Nodes (10): CGAffineTransform, CVPixelBuffer, Data, SampleUploader, Bool, CMSampleBuffer, DispatchQueue, Int (+2 more)
+Nodes (15): ClientProtocolVersionExt, ClientProtocolVersion, bitratePriority, compareTo, copyWith, hashCode, maxBitrate, maxFramerate (+7 more)
 
 ### Community 224 - "participant_stats.dart"
-Cohesion: 0.15
-Nodes (16): build, createState, deactivate, initState, listeners, participant, ParticipantStatsWidget, _ParticipantStatsWidgetState (+8 more)
+Cohesion: 0.11
+Nodes (23): build, createState, deactivate, initState, listeners, participant, ParticipantStatsWidget, _ParticipantStatsWidgetState (+15 more)
 
 ### Community 225 - "FlutterWindow"
-Cohesion: 0.12
-Nodes (14): DartProject, HWND, LPARAM, LRESULT, UINT, WPARAM, FlutterWindow, flutter_controller_ (+6 more)
+Cohesion: 0.11
+Nodes (4): FlutterWindow, flutter_controller_, FlutterWindow::FlutterWindow(), project_
 
 ### Community 226 - "T"
 Cohesion: 0.20
-Nodes (5): RingBuffer, Int, T, RingBuffer, RingBuffer
+Nodes (3): RingBuffer, RingBuffer, RingBuffer
 
 ### Community 227 - "e2ee.utils.dart"
-Cohesion: 0.12
-Nodes (16): RTCRtpSender, createKeyMaterialFromString, dataOut, false, fromList, getAlgoOptions, isE2EESupported, isInsertableStreamSupported (+8 more)
-
-### Community 228 - "AudioRenderer"
-Cohesion: 0.20
-Nodes (8): AudioRenderer, AudioTrackSink, ByteBuffer, EventChannel, Handler, StreamHandler, RendererAudioFormat, BinaryMessenger
+Cohesion: 0.11
+Nodes (15): createKeyMaterialFromString, dataOut, false, fromList, getAlgoOptions, isE2EESupported, isInsertableStreamSupported, isScriptTransformSupported (+7 more)
 
 ### Community 229 - "Visualizer"
-Cohesion: 0.23
-Nodes (11): calculateAmplitudeBarsFromFFT(), centerBands(), easeInOutCubic(), AudioTrackSink, ByteBuffer, EventChannel, FloatArray, Handler (+3 more)
+Cohesion: 0.20
+Nodes (5): calculateAmplitudeBarsFromFFT(), centerBands(), easeInOutCubic(), smoothTransition(), Visualizer
+
+### Community 230 - ".resample"
+Cohesion: 0.15
+Nodes (3): AudioResampler, ResampleResult, AudioResamplerTest
 
 ### Community 231 - "exts.dart"
 Cohesion: 0.12
-Nodes (15): BuildContext, LKExampleExt, showDataReceivedDialog, showDisconnectDialog, showErrorDialog, showPlayAudioManuallyDialog, showPublishDialog, showReconnectDialog (+7 more)
+Nodes (14): LKExampleExt, showDataReceivedDialog, showDisconnectDialog, showErrorDialog, showPlayAudioManuallyDialog, showPublishDialog, showReconnectDialog, showReconnectSuccessDialog (+6 more)
 
 ### Community 232 - "participant_info.dart"
 Cohesion: 0.13
-Nodes (15): ConnectionQuality, audioAvailable, build, connectionQuality, enabledE2EE, isScreenShare, lkAudioSourceType, lkVideoSourceType (+7 more)
+Nodes (13): audioAvailable, build, connectionQuality, enabledE2EE, isScreenShare, lkAudioSourceType, lkVideoSourceType, participant (+5 more)
 
-### Community 233 - "lib/src/agent/chat/message.dart"
-Cohesion: 0.16
-Nodes (15): AgentTranscript, content, copyWith, hashCode, id, operator, ReceivedMessage, ReceivedMessageContent (+7 more)
+### Community 233 - "message.dart"
+Cohesion: 0.17
+Nodes (13): AgentTranscript, content, copyWith, hashCode, id, operator, ReceivedMessageContent, SentMessageContent (+5 more)
 
-### Community 234 - "lib/src/token_source/room_configuration.dart"
-Cohesion: 0.12
-Nodes (15): agentName, agents, departureTimeout, deployment, emptyTimeout, fromJson, maxParticipants, maxPlayoutDelay (+7 more)
+### Community 234 - "room_configuration.dart"
+Cohesion: 0.13
+Nodes (13): agentName, agents, departureTimeout, deployment, emptyTimeout, fromJson, maxParticipants, maxPlayoutDelay (+5 more)
 
 ### Community 235 - "Float"
 Cohesion: 0.22
 Nodes (9): FFTComputeBandsResult, FFTProcessor, FFTResult, Float, .nyquistFrequency, WindowType, hamming, hanning (+1 more)
 
-### Community 236 - "pffft.c"
-Cohesion: 0.21
-Nodes (12): pffft_transform_t, cffti1_ps(), decompose(), pffft_aligned_free(), pffft_aligned_malloc(), pffft_destroy_setup(), pffft_new_setup(), pffft_real_finalize() (+4 more)
+### Community 236 - "pffft_new_setup"
+Cohesion: 0.19
+Nodes (9): FFTSetup, setup_, cffti1_ps(), decompose(), pffft_aligned_free(), pffft_aligned_malloc(), pffft_destroy_setup(), pffft_new_setup() (+1 more)
 
-### Community 237 - "FFTAudioAnalyzer"
-Cohesion: 0.25
-Nodes (6): AudioFormat, FFTAudioAnalyzer, AudioFormat, ByteBuffer, FloatArray, Noise
-
-### Community 238 - "lib/src/e2ee/options.dart"
-Cohesion: 0.15
-Nodes (13): EncryptionType, key_provider.dart, KeyProvider, BaseKeyProvider, E2EEOptions, EncryptionType, keyProvider, sharedKey (+5 more)
-
-### Community 239 - "SampleHandler"
-Cohesion: 0.16
-Nodes (8): SampleHandler, .socketFilePath, CMSampleBuffer, Int, NSObject, String, RPBroadcastSampleHandler, RPSampleBufferType
-
-### Community 240 - "$0"
-Cohesion: 0.17
-Nodes (15): $0(), a2(), ae(), aF(), aJ(), B(), ba(), bI() (+7 more)
-
-### Community 241 - "win32_window.cpp"
+### Community 238 - "e2ee/options.dart"
 Cohesion: 0.22
-Nodes (11): wchar_t, Scale(), CreateAndShow, Destroy, Win32Window::Win32Window(), WindowClassRegistrar, class_registered_, GetWindowClass (+3 more)
+Nodes (5): BaseKeyProvider, E2EEOptions, EncryptionType, keyProvider, sharedKey
 
-### Community 242 - "datachannel_mock.dart"
-Cohesion: 0.13
-Nodes (14): RTCDataChannel, RTCDataChannelState?, RTCDataChannelState? get, StreamController, bufferedAmount, bufferedAmountLowThreshold, close, getBufferedAmount (+6 more)
+### Community 240 - "toString$0$"
+Cohesion: 0.22
+Nodes (9): _Base64Encoder_encodeChunk(), _enumToString$0(), get$_errorExplanation(), get$_errorName(), get$invalidValue(), $mul(), toRadixString$1(), toString() (+1 more)
 
-### Community 243 - "fft_processor.cpp"
-Cohesion: 0.23
-Nodes (11): ApplyWindow(), vector, EnsureFinite(), ComputeFFT, ConvertFloatToDb, DoFFTAnalysis, GetFloatFrequencyData, WriteInput (+3 more)
+### Community 241 - ".CreateAndShow"
+Cohesion: 0.14
+Nodes (8): Point, x, y, Scale(), Win32Window::Win32Window(), WindowClassRegistrar, class_registered_, instance_
+
+### Community 242 - "int? get"
+Cohesion: 0.07
+Nodes (20): _buffer, ByteRingBuffer, capacity, clear, isEmpty, _length, _start, takeBytes (+12 more)
 
 ### Community 244 - "Float"
-Cohesion: 0.23
-Nodes (9): FFTComputeBandsResult, FFTProcessor, FFTResult, Float, .nyquistFrequency, WindowType, hamming, hanning (+1 more)
+Cohesion: 0.11
+Nodes (18): FFTComputeBandsResult, FFTProcessor, FFTResult, Float, .nyquistFrequency, WindowType, hamming, hanning (+10 more)
 
-### Community 245 - "package.json"
-Cohesion: 0.15
-Nodes (9): handler(), mockRes(), res, dependencies, livekit-server-sdk, name, private, type (+1 more)
+### Community 245 - "index.js"
+Cohesion: 0.06
+Nodes (32): handler(), mockRes(), res, getOperatorName(), LIVEKIT_API_KEY, LIVEKIT_API_SECRET, LIVEKIT_URL, loadAccount() (+24 more)
 
-### Community 246 - "lib/src/token_source/endpoint.dart"
-Cohesion: 0.14
-Nodes (13): Client?, body, client, EndpointTokenSource, fetch, headers, method, statusCode (+5 more)
+### Community 246 - "endpoint.dart"
+Cohesion: 0.17
+Nodes (10): body, client, EndpointTokenSource, fetch, headers, method, statusCode, toString (+2 more)
 
 ### Community 247 - "Audio session management"
 Cohesion: 0.14
 Nodes (13): API reference, Audio processing, Audio session management, Automatic vs manual mode, Configuration timing, Defaults if you do nothing, Migrating from the old APIs, Observing audio engine state (+5 more)
 
-### Community 248 - "package:flutter/foundation.dart"
-Cohesion: 0.14
-Nodes (12): build, format, load, main, main, package:flutter_dotenv/flutter_dotenv.dart, package:flutter/foundation.dart, package:google_fonts/google_fonts.dart (+4 more)
+### Community 248 - "package:flutter/material.dart"
+Cohesion: 0.08
+Nodes (10): DefaultFirebaseOptions, web, build, _devRoom, format, load, main, build (+2 more)
 
 ### Community 249 - "LKAudioTrack"
-Cohesion: 0.22
-Nodes (5): AudioTrackSink, LKAudioTrack, AudioTrack, AudioTrackSink, LKRemoteAudioTrack
-
-### Community 250 - "BundleInfo"
-Cohesion: 0.23
-Nodes (7): Bundle, MainActivity, FlutterActivity, FlutterEngine, BundleInfo, .wrappedValue, String
-
-### Community 251 - "Win32Window"
-Cohesion: 0.22
-Nodes (13): OnCreate, OnDestroy, HWND, Win32Window, child_content_, GetClientArea, OnCreate, OnDestroy (+5 more)
-
-### Community 252 - "Subscription"
-Cohesion: 0.24
-Nodes (5): Subscription, .opaqueSelf, S, Subscribers, UnsafeRawPointer
-
-### Community 253 - "V"
 Cohesion: 0.17
-Nodes (12): aB(), ag(), aI(), b0(), bK(), bL(), bN(), eD() (+4 more)
+Nodes (3): AudioProcessors, LKAudioTrack, LKRemoteAudioTrack
 
-### Community 254 - "wWinMain"
-Cohesion: 0.23
-Nodes (9): wWinMain(), string, vector, wchar_t, CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16(), _In_ (+1 more)
+### Community 251 - "win32_window.cpp"
+Cohesion: 0.18
+Nodes (5): EnableFullDpiSupportIfAvailable(), Win32Window, child_content_, quit_on_close_, window_handle_
+
+### Community 254 - "utils.cpp"
+Cohesion: 0.19
+Nodes (4): wWinMain(), CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16()
 
 ### Community 255 - "websocket_mock.dart"
 Cohesion: 0.17
-Nodes (11): package:livekit_client/src/support/websocket.dart, connect, handlers, MockWebSocketConnector, onData, onDispose, onError, send (+3 more)
+Nodes (7): connect, handlers, MockWebSocketConnector, onData, onDispose, onError, send
 
 ### Community 256 - "e2ee.sfi_guard.dart"
 Cohesion: 0.17
 Nodes (11): consecutiveSifCount, isSifAllowed, lastSifReceivedAt, MAX_SIF_COUNT, MAX_SIF_DURATION, recordSif, recordUserFrame, reset (+3 more)
 
-### Community 257 - "_Value"
-Cohesion: 0.31
-Nodes (6): Atomic, .wrappedValue, _Absent, _Value, valueOr, ValueOrAbsent
-
-### Community 258 - ".application"
-Cohesion: 0.22
-Nodes (8): AppDelegate, Any, Bool, AppDelegate, Bool, FlutterAppDelegate, NSApplication, UIApplication
-
 ### Community 259 - "manifest.json"
 Cohesion: 0.18
 Nodes (10): background_color, description, display, icons, name, orientation, prefer_related_applications, short_name (+2 more)
 
-### Community 260 - "MessageHandler"
-Cohesion: 0.36
-Nodes (10): HWND, LPARAM, LRESULT, UINT, WPARAM, EnableFullDpiSupportIfAvailable(), GetHandle, GetThisFromHandle (+2 more)
-
 ### Community 261 - "package:livekit_client/src/proto/livekit_models.pb.dart"
-Cohesion: 0.20
-Nodes (8): package:livekit_client/src/proto/livekit_models.pb.dart, package:livekit_client/src/utils/data_packet_buffer.dart, localAudioTrack, localParticipantData, remoteAudioTrack, remoteParticipantData, remoteSpeakerInfo, main
-
-### Community 262 - "pffft_transform_internal"
-Cohesion: 0.40
-Nodes (10): pffft_direction_t, PFFFT_Setup, pffft_transform(), pffft_transform_internal(), pffft_transform_internal_nosimd(), pffft_transform_ordered(), pffft_zconvolve_accumulate(), pffft_zconvolve_accumulate_nosimd() (+2 more)
+Cohesion: 0.11
+Nodes (9): localAudioTrack, localParticipantData, remoteAudioTrack, remoteParticipantData, remoteSpeakerInfo, main, main, _testLayerDimensions (+1 more)
 
 ### Community 263 - "AudioProcessors"
 Cohesion: 0.42
-Nodes (6): AudioRenderer, AudioProcessors, AudioTrack, AudioProcessors, AudioProcessors, Visualizer
-
-### Community 264 - "lib/src/e2ee/events.dart"
-Cohesion: 0.22
-Nodes (8): E2EEState, participant, publication, state, toString, TrackE2EEStateEvent, LocalTrackPublication, TrackPublication
+Nodes (3): AudioProcessors, AudioProcessors, AudioProcessors
 
 ### Community 265 - "SampleUploader.swift"
 Cohesion: 0.29
 Nodes (4): Constants, Constants, OSLog, ReplayKit
 
-### Community 267 - "AudioResampler"
-Cohesion: 0.52
-Nodes (3): AudioResampler, ShortArray, ResampleResult
-
 ### Community 268 - "AudioReceiverStats"
 Cohesion: 0.29
 Nodes (7): AudioReceiverStats, AudioSenderStats, CodecStats, ReceiverStats, SenderStats, VideoReceiverStats, VideoSenderStats
 
-### Community 269 - "RTCMediaStreamTrack"
+### Community 269 - "NSObject"
 Cohesion: 0.43
-Nodes (4): RTCMediaStreamTrack, Track, Track, Track
+Nodes (3): Track, Track, Track
 
 ### Community 270 - "lib/src/agent/constants.dart"
 Cohesion: 0.33
@@ -1434,49 +1024,37 @@ Nodes (5): DataStreamError, DataStreamErrorReason, message, reason, toString
 Cohesion: 0.40
 Nodes (4): AudioContextState, fromValue, fromValues, value
 
-### Community 273 - "src/support/value_or_absent.dart"
-Cohesion: 0.60
-Nodes (4): _Absent, _Value, valueOr, ValueOrAbsent
-
 ### Community 274 - "LiveKit Flutter Example"
 Cohesion: 0.50
 Nodes (3): End-to-End Encryption (E2EE), LiveKit Flutter Example, Quickstart
 
-### Community 275 - "Point"
-Cohesion: 0.50
-Nodes (3): Point, x, y
-
 ### Community 276 - "Size"
 Cohesion: 0.50
 Nodes (3): Size, height, width
-
-### Community 277 - "FFTSetup"
-Cohesion: 0.67
-Nodes (3): FFTSetup, setup_, PFFFT_Setup
 
 ### Community 278 - "vercel.json"
 Cohesion: 0.50
 Nodes (3): buildCommand, installCommand, outputDirectory
 
 ## Knowledge Gaps
-- **7159 isolated node(s):** `bootstrap.sh script`, `broadcastStarted`, `broadcastStopped`, `Constants`, `.socketFilePath` (+7154 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 7524 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4240 isolated node(s):** `bootstrap.sh script`, `broadcastStarted`, `broadcastStopped`, `Constants`, `.socketFilePath` (+4235 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5225 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **48 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `_` connect `_` to `lib/src/internal/events.dart`, `dart:typed_data`, `livekit_models.pbenum.dart`, `_`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `DarwinNotification` connect `DarwinNotification` to `Subscription`, `String`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `DataPacket_Kind` connect `lib/src/internal/events.dart` to `_`, `lib/src/proto/livekit_models.pb.dart`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `_` connect `_` to `internal/events.dart`, `dart:typed_data`, `signal_client_test.dart`?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
+- **Why does `Foundation` connect `Foundation` to `SampleUploader.swift`, `T`, `DarwinNotification`, `LKAudioSwitchManager.kt`?**
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **What connects `bootstrap.sh script`, `broadcastStarted`, `broadcastStopped` to the rest of the system?**
-  _7159 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `src/proto/livekit_models.pb.dart` be split into smaller, more focused modules?**
-  _Cohesion score 0.0035587188612099642 - nodes in this community are weakly interconnected._
-- **Should `src/proto/livekit_rtc.pb.dart` be split into smaller, more focused modules?**
-  _Cohesion score 0.0047169811320754715 - nodes in this community are weakly interconnected._
-- **Should `livekit_models.pbenum.dart` be split into smaller, more focused modules?**
-  _Cohesion score 0.012987012987012988 - nodes in this community are weakly interconnected._
+  _4240 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `_eval$1` be split into smaller, more focused modules?**
+  _Cohesion score 0.06095791001451379 - nodes in this community are weakly interconnected._
+- **Should `call$1` be split into smaller, more focused modules?**
+  _Cohesion score 0.08048780487804878 - nodes in this community are weakly interconnected._
+- **Should `log$4` be split into smaller, more focused modules?**
+  _Cohesion score 0.09309309309309309 - nodes in this community are weakly interconnected._

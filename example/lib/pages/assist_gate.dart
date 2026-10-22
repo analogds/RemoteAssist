@@ -98,13 +98,13 @@ class _AssistGateState extends State<AssistGate> {
         return const _Notice(
           title: 'Remote Assist is for ThreadX staff',
           body: 'Ask a ThreadX admin if you need to take Remote Assist calls.',
-          action: 'Back to ThreadX',
+          action: 'Back to Dashboard',
         );
       case _Access.failed:
         return _Notice(
           title: 'Remote Assist is unavailable',
           body: 'Could not reach the Remote Assist service: $_error',
-          action: 'Back to ThreadX',
+          action: 'Back to Dashboard',
           onRetry: _check,
         );
     }
