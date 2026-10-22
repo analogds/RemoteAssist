@@ -142,12 +142,15 @@ class _ParticipantStatsWidgetState extends State<ParticipantStatsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black.withValues(alpha: 0.3),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(8),
+      ),
       padding: const EdgeInsets.symmetric(
         vertical: 8,
-        horizontal: 8,
+        horizontal: 12,
       ),
-      child: Column(children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('audio stats', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
         ...stats['audio']!.entries.map((e) => Text('${e.key}: ${e.value}')),
         const Text('video stats', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),

@@ -210,9 +210,9 @@
     "semantic_hash": ""
   },
   "example/lib/pages/room.dart": {
-    "mtime": 1792689873.5833275,
-    "seen": 1792689884.291147,
-    "ast_hash": "d3cb5cc0740cb0b1fa0f7bde049e5f3d",
+    "mtime": 1792690460.031658,
+    "seen": 1792690478.0257542,
+    "ast_hash": "7721fba86b0701703c30f0bd3aa561fb",
     "semantic_hash": ""
   },
   "example/lib/theme.dart": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "example/lib/widgets/participant.dart": {
-    "mtime": 1791913788.4572759,
-    "seen": 1792686498.2263381,
-    "ast_hash": "d08cdc8b194c000b58746711e9aa806a",
+    "mtime": 1792690434.4992964,
+    "seen": 1792690478.025813,
+    "ast_hash": "376a071358e892ce50df367e117ee76f",
     "semantic_hash": ""
   },
   "example/lib/widgets/participant_info.dart": {
@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "example/lib/widgets/participant_stats.dart": {
-    "mtime": 1791913788.457449,
-    "seen": 1792686498.226339,
-    "ast_hash": "2cdf9ec83b56c96a983ba1c49a194e89",
+    "mtime": 1792690471.7303267,
+    "seen": 1792690478.0258281,
+    "ast_hash": "0ef25c76f2cc9b3cbd76366d5e976296",
     "semantic_hash": ""
   },
   "example/lib/widgets/sound_waveform.dart": {

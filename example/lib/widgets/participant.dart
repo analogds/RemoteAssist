@@ -6,18 +6,15 @@ import 'package:livekit_example/theme.dart';
 import 'dart:async';
 import 'no_video.dart';
 import 'participant_info.dart';
-import 'participant_stats.dart';
 import 'sound_waveform.dart';
 
 abstract class ParticipantWidget extends StatefulWidget {
   // Convenience method to return relevant widget for participant
-  static ParticipantWidget widgetFor(ParticipantTrack participantTrack, {bool showStatsLayer = false}) {
+  static ParticipantWidget widgetFor(ParticipantTrack participantTrack) {
     if (participantTrack.participant is LocalParticipant) {
-      return LocalParticipantWidget(
-          participantTrack.participant as LocalParticipant, participantTrack.type, showStatsLayer);
+      return LocalParticipantWidget(participantTrack.participant as LocalParticipant, participantTrack.type);
     } else if (participantTrack.participant is RemoteParticipant) {
-      return RemoteParticipantWidget(
-          participantTrack.participant as RemoteParticipant, participantTrack.type, showStatsLayer);
+      return RemoteParticipantWidget(participantTrack.participant as RemoteParticipant, participantTrack.type);
     }
     throw UnimplementedError('Unknown participant type');
   }
@@ -25,7 +22,6 @@ abstract class ParticipantWidget extends StatefulWidget {
   // Must be implemented by child class
   abstract final Participant participant;
   abstract final ParticipantTrackType type;
-  abstract final bool showStatsLayer;
   final VideoQuality quality;
 
   const ParticipantWidget({
@@ -39,13 +35,10 @@ class LocalParticipantWidget extends ParticipantWidget {
   final LocalParticipant participant;
   @override
   final ParticipantTrackType type;
-  @override
-  final bool showStatsLayer;
 
   const LocalParticipantWidget(
     this.participant,
-    this.type,
-    this.showStatsLayer, {
+    this.type, {
     super.key,
   });
 
@@ -58,13 +51,10 @@ class RemoteParticipantWidget extends ParticipantWidget {
   final RemoteParticipant participant;
   @override
   final ParticipantTrackType type;
-  @override
-  final bool showStatsLayer;
 
   const RemoteParticipantWidget(
     this.participant,
-    this.type,
-    this.showStatsLayer, {
+    this.type, {
     super.key,
   });
 
@@ -162,13 +152,6 @@ abstract class _ParticipantWidgetState<T extends ParticipantWidget> extends Stat
                 ],
               ),
             ),
-            if (widget.showStatsLayer)
-              Positioned(
-                  top: 130,
-                  right: 30,
-                  child: ParticipantStatsWidget(
-                    participant: widget.participant,
-                  )),
             if (activeAudioTrack != null && !activeAudioTrack!.muted)
               Positioned(
                 top: 10,

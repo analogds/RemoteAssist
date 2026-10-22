@@ -10,6 +10,7 @@ import '../utils.dart';
 import '../widgets/controls.dart';
 import '../widgets/participant.dart';
 import '../widgets/participant_info.dart';
+import '../widgets/participant_stats.dart';
 
 class RoomPage extends StatefulWidget {
   final Room room;
@@ -29,6 +30,8 @@ class RoomPage extends StatefulWidget {
 
 class _RoomPageState extends State<RoomPage> {
   List<ParticipantTrack> participantTracks = [];
+  // Debug stats panel for the main tile; closed at the start of every call.
+  bool _showStats = false;
   EventsListener<RoomEvent> get _listener => widget.listener;
   bool get fastConnection => widget.fastConnection;
   @override
@@ -234,9 +237,46 @@ class _RoomPageState extends State<RoomPage> {
             Column(
               children: [
                 Expanded(
-                    child: participantTracks.isNotEmpty
-                        ? ParticipantWidget.widgetFor(participantTracks.first, showStatsLayer: true)
-                        : Container()),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: participantTracks.isNotEmpty
+                            ? ParticipantWidget.widgetFor(participantTracks.first)
+                            : Container(),
+                      ),
+                      // Other participants, stacked down the left edge over the main video
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        width: 180,
+                        child: SafeArea(
+                          right: false,
+                          bottom: false,
+                          child: ListView.builder(
+                            padding: EdgeInsets.zero,
+                            itemCount: math.max(0, participantTracks.length - 1),
+                            itemBuilder: (BuildContext context, int index) => SizedBox(
+                              width: 180,
+                              height: 120,
+                              child: ParticipantWidget.widgetFor(participantTracks[index + 1]),
+                            ),
+                          ),
+                        ),
+                      ),
+                      if (participantTracks.isNotEmpty)
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: SafeArea(
+                            left: false,
+                            bottom: false,
+                            child: _buildStatsDropdown(participantTracks.first.participant),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
                 if (widget.room.localParticipant != null)
                   SafeArea(
                     top: false,
@@ -244,23 +284,28 @@ class _RoomPageState extends State<RoomPage> {
                   )
               ],
             ),
-            Positioned(
-                left: 0,
-                right: 0,
-                top: 0,
-                child: SizedBox(
-                  height: 120,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: math.max(0, participantTracks.length - 1),
-                    itemBuilder: (BuildContext context, int index) => SizedBox(
-                      width: 180,
-                      height: 120,
-                      child: ParticipantWidget.widgetFor(participantTracks[index + 1]),
-                    ),
-                  ),
-                )),
           ],
         ),
+      );
+
+  Widget _buildStatsDropdown(Participant participant) => Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          IconButton(
+            tooltip: _showStats ? 'Hide stats' : 'Show stats',
+            style: IconButton.styleFrom(backgroundColor: Colors.black.withValues(alpha: 0.3)),
+            icon: Icon(_showStats ? Icons.close : Icons.analytics_outlined, color: Colors.white70),
+            onPressed: () => setState(() => _showStats = !_showStats),
+          ),
+          if (_showStats)
+            Padding(
+              padding: const EdgeInsets.only(top: 4, right: 4),
+              child: ParticipantStatsWidget(
+                key: ValueKey(participant.sid),
+                participant: participant,
+              ),
+            ),
+        ],
       );
 }
