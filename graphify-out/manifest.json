@@ -216,9 +216,9 @@
     "semantic_hash": ""
   },
   "example/lib/theme.dart": {
-    "mtime": 1791996599.5976603,
-    "seen": 1792686498.226337,
-    "ast_hash": "1afa3f1d1befaf5e8a40ae8f145f5808",
+    "mtime": 1792701103.5489337,
+    "seen": 1792701161.295855,
+    "ast_hash": "2bb32d7f85b255b68b50990217696d67",
     "semantic_hash": ""
   },
   "example/lib/utils.dart": {
@@ -306,14 +306,14 @@
     "semantic_hash": ""
   },
   "example/test/widget_test.dart": {
-    "mtime": 1791913788.4611437,
-    "seen": 1792686498.226343,
-    "ast_hash": "794758f8937bedea3f233f1836a919ae",
+    "mtime": 1792701126.9531925,
+    "seen": 1792701161.2960372,
+    "ast_hash": "43b447789f4ea20ff6f8294d1b90bdc1",
     "semantic_hash": ""
   },
   "example/web/e2ee.worker.dart.js": {
-    "mtime": 1792686407.9646785,
-    "seen": 1792686498.226343,
+    "mtime": 1792692692.112507,
+    "seen": 1792701161.2960372,
     "ast_hash": "898e27bceb6b2ba10ced0aed76240f6a",
     "semantic_hash": ""
   },
@@ -1704,9 +1704,9 @@
     "semantic_hash": ""
   },
   ".github/actions/setup-flutter/action.yml": {
-    "mtime": 1791913788.445426,
-    "seen": 1792686498.2264209,
-    "ast_hash": "4657bc445c083a5023b13e5f7e5ffe2a",
+    "mtime": 1792701096.900022,
+    "seen": 1792701161.298833,
+    "ast_hash": "5c49923cab50734d1da939278b62b4ec",
     "semantic_hash": ""
   },
   ".github/dependabot.yml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build.yaml": {
-    "mtime": 1791913788.446191,
-    "seen": 1792686498.226422,
-    "ast_hash": "0ba647ec29a45879ce2442eea464fbd5",
+    "mtime": 1792701091.816719,
+    "seen": 1792701161.2988439,
+    "ast_hash": "34124b1bd88e44d8e6a0df24ef38b454",
     "semantic_hash": ""
   },
   ".github/workflows/changeset.yaml": {
@@ -1728,15 +1728,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/deploy-web.yaml": {
-    "mtime": 1791913788.4463272,
-    "seen": 1792686498.226422,
-    "ast_hash": "a80fa0ea879060c3e0fb6f7daaa1b2ad",
-    "semantic_hash": ""
-  },
-  ".github/workflows/publish-docs.yaml": {
-    "mtime": 1791913788.4463897,
-    "seen": 1792686498.226422,
-    "ast_hash": "aa2323c145066b090ed1a13a6f3a4944",
+    "mtime": 1792701094.871651,
+    "seen": 1792701161.298856,
+    "ast_hash": "94a801aff944d323c3617e224de094a2",
     "semantic_hash": ""
   },
   ".github/workflows/publish.yaml": {
@@ -1854,9 +1848,9 @@
     "semantic_hash": ""
   },
   "pubspec.yaml": {
-    "mtime": 1791914035.5456443,
-    "seen": 1792686498.226429,
-    "ast_hash": "322ed7e522a83fcb8f2249f9784b5a39",
+    "mtime": 1792701092.8443882,
+    "seen": 1792701161.299055,
+    "ast_hash": "bd17dfa04c167eef5b1dd6cd0f5a743d",
     "semantic_hash": ""
   },
   ".github/banner_dark.png": {
@@ -2142,9 +2136,9 @@
     "semantic_hash": ""
   },
   "example/lib/firebase_options_threadx.dart": {
-    "mtime": 1791914035.5426369,
-    "seen": 1792686498.226335,
-    "ast_hash": "c15643e51d2b4a5ebcb2953c9292ade0",
+    "mtime": 1792701103.5217981,
+    "seen": 1792701161.2957928,
+    "ast_hash": "84ac6cd620cc15b5aeb80f4166e2f8f1",
     "semantic_hash": ""
   },
   "example/lib/pages/assist_gate.dart": {

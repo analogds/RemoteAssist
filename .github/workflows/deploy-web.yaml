@@ -15,12 +15,13 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
+          flutter-version: "3.35.2"
       - run: flutter pub get
       - name: Build example web app
         run: |
           dart compile js ./web/e2ee.worker.dart -o ./example/web/e2ee.worker.dart.js
           cd example
-          flutter build web --release --base-href /client-sdk-flutter/
+          flutter build web --release --base-href /RemoteAssist/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

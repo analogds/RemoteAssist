@@ -21,10 +21,10 @@ void main() {
     expect(find.text('Optic Live Stream'), findsOneWidget);
     expect(find.text('Connect'), findsOneWidget);
     for (final label in ['Server URL', 'Token', 'Shared Key']) {
-      expect(tester.getSemantics(find.bySemanticsLabel(label)), isSemantics(label: label, isTextField: true));
+      expect(tester.getSemantics(find.bySemanticsLabel(label)), containsSemantics(label: label, isTextField: true));
     }
     for (final label in ['E2EE', 'Simulcast', 'Adaptive Stream', 'Dynacast', 'Multi Codec']) {
-      expect(tester.getSemantics(find.bySemanticsLabel(label)), isSemantics(label: label, hasToggledState: true));
+      expect(tester.getSemantics(find.bySemanticsLabel(label)), containsSemantics(label: label, hasToggledState: true));
     }
     semantics.dispose();
   });

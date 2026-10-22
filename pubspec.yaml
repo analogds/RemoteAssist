@@ -77,10 +77,6 @@ flutter:
         pluginClass: LiveKitPlugin
       macos:
         pluginClass: LiveKitPlugin
-      windows:
-        pluginClass: LiveKitPlugin
-      linux:
-        pluginClass: LiveKitPlugin
       web:
         pluginClass: LiveKitWebPlugin
         fileName: livekit_client_web.dart

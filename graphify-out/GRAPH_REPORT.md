@@ -1,7 +1,7 @@
 # Graph Report - RemoteAssist  (2026-10-22)
 
 ## Corpus Check
-- 306 files · ~278,595 words
+- 306 files · ~278,471 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 84 file(s) not represented in the graph (top: (none) 33, .xml 8, .plist 8)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d3461ebf`
+- Built from commit: `080112e0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1093,9 +1093,9 @@ Nodes (3): buildCommand, installCommand, outputDirectory
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `DarwinNotification` connect `String` to `Foundation`, `Subscription`, `SampleHandler`?**
-  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
 - **Why does `Foundation` connect `Foundation` to `BundleInfo`, `T`, `BroadcastManager`, `_Value`, `ios/Classes/AudioProcessing.swift`, `Float`, `String`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `WebRTC` connect `Foundation` to `ios/Classes/AudioProcessing.swift`, `Float`, `AVFoundation`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `bootstrap.sh script`, `broadcastStarted`, `broadcastStopped` to the rest of the system?**
