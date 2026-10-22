@@ -9,6 +9,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'dart:async';
+import '../assist_dev.dart';
 import '../assist_token.dart';
 import '../exts.dart';
 import 'assist_gate.dart';
@@ -158,7 +159,7 @@ class _ConnectPageState extends State<ConnectPage> {
       _busy = true;
     });
     try {
-      final grant = await fetchAssistGrant();
+      final grant = assistDevRoom.isNotEmpty ? devAssistGrant() : await fetchAssistGrant();
       setState(() {
         _uriCtrl.text = grant.url;
         _tokenCtrl.text = grant.token;

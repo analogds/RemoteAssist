@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -10,7 +9,6 @@ import 'package:livekit_client/livekit_client.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 
 import '../exts.dart';
-import 'rpc_test_sheet.dart';
 
 class ControlsWidget extends StatefulWidget {
   //
@@ -39,8 +37,6 @@ class _ControlsWidgetState extends State<ControlsWidget> {
 
   bool _speakerphoneOn = AudioManager.instance.isSpeakerOutputPreferred;
 
-  final _rpcController = RpcTestController();
-
   @override
   void initState() {
     super.initState();
@@ -55,7 +51,6 @@ class _ControlsWidgetState extends State<ControlsWidget> {
   void dispose() {
     unawaited(_subscription?.cancel());
     participant.removeListener(_onChange);
-    _rpcController.dispose();
     super.dispose();
   }
 
@@ -214,59 +209,6 @@ class _ControlsWidgetState extends State<ControlsWidget> {
   void _onTapDisconnect() async {
     final result = await context.showDisconnectDialog();
     if (result == true) await widget.room.disconnect();
-  }
-
-  void _onTapUpdateSubscribePermission() async {
-    final result = await context.showSubscribePermissionDialog();
-    if (result != null) {
-      try {
-        widget.room.localParticipant?.setTrackSubscriptionPermissions(
-          allParticipantsAllowed: result,
-        );
-      } catch (error) {
-        if (!mounted) return;
-        await context.showErrorDialog(error);
-      }
-    }
-  }
-
-  void _onTapSimulateScenario() async {
-    final result = await context.showSimulateScenarioDialog();
-    if (result != null) {
-      print('${result}');
-
-      if (SimulateScenarioResult.e2eeKeyRatchet == result) {
-        await widget.room.e2eeManager?.ratchetKey();
-      }
-
-      if (SimulateScenarioResult.participantMetadata == result) {
-        await widget.room.localParticipant?.setMetadata('new metadata ${widget.room.localParticipant?.identity}');
-      }
-
-      if (SimulateScenarioResult.participantName == result) {
-        await widget.room.localParticipant?.setName('new name for ${widget.room.localParticipant?.identity}');
-      }
-
-      await widget.room.sendSimulateScenario(
-        speakerUpdate: result == SimulateScenarioResult.speakerUpdate ? 3 : null,
-        signalReconnect: result == SimulateScenarioResult.signalReconnect ? true : null,
-        fullReconnect: result == SimulateScenarioResult.fullReconnect ? true : null,
-        nodeFailure: result == SimulateScenarioResult.nodeFailure ? true : null,
-        migration: result == SimulateScenarioResult.migration ? true : null,
-        serverLeave: result == SimulateScenarioResult.serverLeave ? true : null,
-        switchCandidate: result == SimulateScenarioResult.switchCandidate ? true : null,
-      );
-    }
-  }
-
-  void _onTapSendData() async {
-    final result = await context.showSendDataDialog();
-    if (result == true) {
-      await widget.participant.publishData(
-        utf8.encode('This is a sample data message'),
-        reliable: true,
-      );
-    }
   }
 
   @override
@@ -448,32 +390,8 @@ class _ControlsWidgetState extends State<ControlsWidget> {
             icon: const Icon(Icons.close_sharp),
             tooltip: 'disconnect',
           ),
-          IconButton(
-            onPressed: _onTapSendData,
-            icon: const Icon(Icons.message),
-            tooltip: 'send demo data',
-          ),
-          IconButton(
-            onPressed: _onTapUpdateSubscribePermission,
-            icon: const Icon(Icons.settings),
-            tooltip: 'Subscribe permission',
-          ),
-          IconButton(
-            onPressed: _onTapSimulateScenario,
-            icon: const Icon(Icons.bug_report),
-            tooltip: 'Simulate scenario',
-          ),
-          IconButton(
-            onPressed: _onTapRpcTest,
-            icon: const Icon(Icons.swap_horiz),
-            tooltip: 'RPC test',
-          ),
         ],
       ),
     );
-  }
-
-  void _onTapRpcTest() {
-    unawaited(showRpcTestSheet(context, widget.room, _rpcController));
   }
 }

@@ -5,6 +5,7 @@ import 'package:livekit_example/theme.dart';
 import 'package:logging/logging.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'assist_dev.dart';
 import 'firebase_options_threadx.dart';
 import 'pages/assist_gate.dart';
 import 'pages/connect.dart';
@@ -50,11 +51,7 @@ class LiveKitExampleApp extends StatelessWidget {
         theme: ThreadXTheme.light(context),
         debugShowCheckedModeBanner: false,
         home: kIsWeb
-            ? (_devRoom.isNotEmpty ? const ConnectPage(room: _devRoom) : const AssistGate())
+            ? (assistDevRoom.isNotEmpty ? const ConnectPage(room: assistDevRoom) : const AssistGate())
             : const ConnectPage(),
       );
 }
-
-/// Local UI work only: `flutter run -d chrome --dart-define=ASSIST_DEV_ROOM=msc-support` skips the
-/// sign-in gate, which can never pass on localhost. Always empty in release builds.
-const _devRoom = kReleaseMode ? '' : String.fromEnvironment('ASSIST_DEV_ROOM');

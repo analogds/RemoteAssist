@@ -120,38 +120,6 @@ extension LKExampleExt on BuildContext {
         ),
       );
 
-  Future<bool?> showSendDataDialog() => showDialog<bool>(
-        context: this,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Send data'),
-          content: const Text('This will send a sample data to all participants in the room'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Send'),
-            ),
-          ],
-        ),
-      );
-
-  Future<bool?> showDataReceivedDialog(String data) => showDialog<bool>(
-        context: this,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Received data'),
-          content: Text(data),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
-
   Future<bool?> showRecordingStatusChangedDialog(bool isActiveRecording) => showDialog<bool>(
         context: this,
         builder: (ctx) => AlertDialog(
@@ -165,49 +133,4 @@ extension LKExampleExt on BuildContext {
           ],
         ),
       );
-
-  Future<bool?> showSubscribePermissionDialog() => showDialog<bool>(
-        context: this,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Allow subscription'),
-          content: const Text('Allow all participants to subscribe tracks published by local participant?'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('NO'),
-            ),
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('YES'),
-            ),
-          ],
-        ),
-      );
-
-  Future<SimulateScenarioResult?> showSimulateScenarioDialog() => showDialog<SimulateScenarioResult>(
-        context: this,
-        builder: (ctx) => SimpleDialog(
-          title: const Text('Simulate Scenario'),
-          children: SimulateScenarioResult.values
-              .map((e) => SimpleDialogOption(
-                    child: Text(e.name),
-                    onPressed: () => Navigator.pop(ctx, e),
-                  ))
-              .toList(),
-        ),
-      );
-}
-
-enum SimulateScenarioResult {
-  signalReconnect,
-  fullReconnect,
-  speakerUpdate,
-  nodeFailure,
-  migration,
-  serverLeave,
-  switchCandidate,
-  e2eeKeyRatchet,
-  participantName,
-  participantMetadata,
-  clear,
 }

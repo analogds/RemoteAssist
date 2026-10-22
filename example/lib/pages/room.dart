@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -127,15 +126,6 @@ class _RoomPageState extends State<RoomPage> {
     })
     ..on<RoomMetadataChangedEvent>((event) {
       print('Room metadata changed: ${event.metadata}');
-    })
-    ..on<DataReceivedEvent>((event) {
-      String decoded = 'Failed to decode';
-      try {
-        decoded = utf8.decode(event.data);
-      } catch (err) {
-        print('Failed to decode: $err');
-      }
-      unawaited(context.showDataReceivedDialog(decoded));
     })
     ..on<AudioPlaybackStatusChanged>((event) async {
       if (!widget.room.canPlaybackAudio) {
