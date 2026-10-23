@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "example/android/settings.gradle": {
-    "mtime": 1791913788.4520807,
-    "seen": 1792686498.22633,
-    "ast_hash": "53ea0fa8d4c7fa959c53064cd60f55ff",
+    "mtime": 1792766674.8771324,
+    "seen": 1792766982.932965,
+    "ast_hash": "cc93335228acba229be68043c1fd87ad",
     "semantic_hash": ""
   },
   "example/ios/LiveKit Broadcast Extension/Atomic.swift": {
@@ -1818,9 +1818,9 @@
     "semantic_hash": ""
   },
   "example/pubspec.yaml": {
-    "mtime": 1792689166.6324544,
-    "seen": 1792689229.010617,
-    "ast_hash": "0aefea14b14425edd2629492d95c22fa",
+    "mtime": 1792766899.3952856,
+    "seen": 1792766982.937081,
+    "ast_hash": "07a868a6a45d1f8b287954368115c6f9",
     "semantic_hash": ""
   },
   "example/web/index.html": {
