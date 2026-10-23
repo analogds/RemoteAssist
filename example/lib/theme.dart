@@ -252,8 +252,8 @@ class ThreadXTheme {
         )),
         padding: WidgetStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 20, horizontal: 25)),
         shape: WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
-        foregroundColor: WidgetStateProperty.resolveWith((states) =>
-            states.contains(WidgetState.disabled) ? onAccent.withValues(alpha: 0.6) : onAccent),
+        foregroundColor: WidgetStateProperty.resolveWith(
+            (states) => states.contains(WidgetState.disabled) ? onAccent.withValues(alpha: 0.6) : onAccent),
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) return accent.withValues(alpha: 0.5);
           if (states.contains(WidgetState.pressed) ||
