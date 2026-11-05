@@ -1,0 +1,31 @@
+/* Scan only src/ for class names, so the CSS does not depend on what else is in the checkout. */
+@import "tailwindcss" source(".");
+
+/* Pointer cursor on clickable controls (Tailwind v4 dropped the button default), as in threadx-web-admin. */
+@layer base {
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  select:not(:disabled),
+  input:is([type='checkbox'], [type='radio']):not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* ThreadX LMS palette (LMS/threadx-web lib/styles/app.colors.dart), so /assist looks like the
+   site it is served from. Same tokens as threadx-web-admin. */
+@theme {
+  --font-sans: 'Roboto', system-ui, sans-serif;
+  --color-primary: #B8403F;
+  --color-primary-dark: #853732;
+  --color-secondary: #88AAC4;
+  --color-navy: #2B495E;
+  --color-app-bg: #EEEEEE;
+  --color-surface: #F5F5F5;
+  --color-on-surface-variant: #4A5568;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
