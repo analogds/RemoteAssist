@@ -4,7 +4,7 @@ set -euo pipefail
 # Local LiveKit room for UI work on the expert web app, with no ThreadX sign-in and no live feed.
 # Starts `livekit-server --dev` on localhost:7880 and a fake headset that loops a POV clip into ROOM.
 # Then, in another terminal:
-#   cd example && ~/flutter-sdks/3.35.2/bin/flutter run -d chrome --dart-define=ASSIST_DEV_ROOM=msc-support
+#   cd example && ~/flutter-sdks/3.47.9/bin/flutter run -d chrome --dart-define=ASSIST_DEV_ROOM=msc-support
 # Every Chrome tab joins as its own dev expert. Ctrl-C stops everything.
 #
 # Needs: brew install livekit livekit-cli ffmpeg

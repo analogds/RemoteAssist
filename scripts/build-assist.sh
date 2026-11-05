@@ -4,9 +4,9 @@ set -euo pipefail
 # Builds the expert web app (example/) for threadx.ai/assist into example/build/web.
 # Called by LMS/threadx-web/scripts/build_all.sh, which copies the output into build/web/assist.
 #
-# Uses the same Flutter as the LMS release (3.35.2, the live site's version): run it with that
+# Uses the same Flutter as the LMS release (3.47.9): run it with that
 # SDK first on PATH, as build_all.sh is. FLUTTER_VERSION is inherited from build_all.sh.
-FLUTTER_VERSION="${FLUTTER_VERSION:-3.35.2}"
+FLUTTER_VERSION="${FLUTTER_VERSION:-3.47.9}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 ACTUAL_FLUTTER="$(flutter --version --machine 2>/dev/null | sed -n 's/.*"frameworkVersion": *"\([^"]*\)".*/\1/p')"
