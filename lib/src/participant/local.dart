@@ -379,30 +379,31 @@ class LocalParticipant extends Participant<LocalTrackPublication> {
     logger.fine('Video layers: ${layers.map((e) => e)}');
 
     Future<lk_models.TrackInfo> negotiate() async {
-      track.transceiver = await room.engine.createTransceiverRTCRtpSender(track, publishOptions!, encodings);
+      final options = publishOptions!;
+      track.transceiver = await room.engine.createTransceiverRTCRtpSender(track, options, encodings);
 
-      track.codec = publishOptions.videoCodec;
+      track.codec = options.videoCodec;
       if (lkBrowser() != BrowserType.firefox) {
         await room.engine.setPreferredCodec(
           track.transceiver!,
           'video',
-          publishOptions.videoCodec,
+          options.videoCodec,
         );
       }
 
       if ([TrackSource.camera, TrackSource.screenShareVideo].contains(track.source)) {
-        final degradationPreference = publishOptions.degradationPreference ?? DegradationPreference.maintainResolution;
+        final degradationPreference = options.degradationPreference ?? DegradationPreference.maintainResolution;
         await track.setDegradationPreference(degradationPreference);
       }
 
       if (kIsWeb && lkBrowser() == BrowserType.firefox && track.kind == TrackType.AUDIO) {
         //TOOD:
-      } else if (isVideoCodec(publishOptions.videoCodec) && encodings?.first.maxBitrate != null) {
+      } else if (isVideoCodec(options.videoCodec) && encodings?.first.maxBitrate != null) {
         // Apply start bitrate for all video codecs to prevent initial blurriness
         room.engine.publisher?.setTrackBitrateInfo(TrackBitrateInfo(
             cid: track.getCid(),
             transceiver: track.transceiver,
-            codec: publishOptions.videoCodec,
+            codec: options.videoCodec,
             maxbr: encodings![0].maxBitrate! ~/ 1000));
       }
 

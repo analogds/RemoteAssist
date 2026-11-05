@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -26,11 +26,10 @@ dependencies:
     path: ../
   flutter_dotenv: ^6.0.1
   # ThreadX sign-in and the remoteAssistToken callable (web only).
-  # Held at the 2026-08-03 FlutterFire release: newer firebase_auth needs
-  # Flutter > 3.35 on iOS, and the three must move together.
-  firebase_core: '>=4.2.0 <4.14.0'
-  firebase_auth: '>=6.1.1 <6.6.0'
-  cloud_functions: '>=6.0.3 <6.4.0'
+  # The three FlutterFire packages must move together.
+  firebase_core: ^4.15.2
+  firebase_auth: ^6.7.1
+  cloud_functions: ^6.5.1
   url_launcher: ^6.2.6
   # Signs local dev tokens (lib/assist_dev.dart); already pulled in by livekit_client.
   dart_jsonwebtoken: ^3.3.2
